@@ -93,6 +93,82 @@ The following database structure was created from within the Flamelink CMS:
    - Component: ContactForm
 ```
 
+##### Schemas
+
+```text
+-- Home
+    - Title: Home
+    - Schema ID: home
+    - Type: Single
+    - Group: Pages
+    - Enabled: true
+    -- Fields:
+      -- Text
+          - Field Name: Page Title
+          - Field Key: pageTitle
+          - Show in overview table: true
+      -- Textarea
+          - Field Name: Page Body
+          - Field Key: pageBody
+          - Show in overview table: false
+
+-- Our Vision
+    - Title: Our Vision
+    - Schema ID: ourVision
+    - Type: Single
+    - Group: Pages
+    - Enabled: true
+    -- Fields:
+      -- Text
+          - Field Name: Title
+          - Field Key: title
+          - Show in overview table: true
+      -- Textarea
+          - Field Name: Body
+          - Field Key: body
+          - Show in overview table: false
+
+-- Who We Are
+    - Title: Who We Are
+    - Schema ID: whoWeAre
+    - Type: Single
+    - Group: Pages
+    - Enabled: true
+    -- Fields:
+      -- Text
+          - Field Name: Title
+          - Field Key: title
+          - Show in overview table: true
+      -- Textarea
+          - Field Name: Body
+          - Field Key: body
+          - Show in overview table: false
+      -- Repeater
+          - Field Name: People
+          - Field Key: people
+          - Field Layout: Table
+          - Show in overview table: false
+          -- Fields:
+            -- Text
+              - Field Name: Name
+              - Field Key: name
+            -- Text
+              - Field Name: Job Title
+              - Field Key: jobTitle
+            -- Textarea
+              - Field Name: Bio
+              - Field Key: bio
+            -- Media
+              - Field Name: Avatar
+              - Field Key: avatar
+              - Selection Limit: 1
+              - Media Types: Images
+```
+
+##### Content
+
+Make sure you add any data for the fields we've created in our schema
+
 ### Install dependencies
 
 ```bash
