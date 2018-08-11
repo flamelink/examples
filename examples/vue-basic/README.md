@@ -2,11 +2,17 @@
 
 > Project bootstrapped with [@vue/cli](https://cli.vuejs.org/)
 
+This aims to be an example of how you would connect Flamelink with your Vue application.
+
 ## Setup
 
 ### Firebase Project Config
 
-Ensure that you have an existing Firebase project that you can use. Copy the `.env` file and save as `.env.local`. Ensure to replace all the environment variables with your Firebase project config details, eg:
+If you want to follow along:
+
+- Ensure that you have an existing [Firebase project](https://console.firebase.google.com/u/0/) that you can use.
+- Copy the `.env` file and save as `.env.local`.
+- Replace all the environment variables with your Firebase project config details, for example:
 
 Change:
 
@@ -43,9 +49,49 @@ To quickly make the content and navigation items available from our app without 
 }
 ```
 
-It simply makes everything inside the `flamelink/environments` reference readable to anyone.
+This simply makes everything inside the `flamelink/environments` reference readable to anyone.
 
-> When you roll out your own app to production, make sure to set the strictest rules possible for your use case.
+> **Important**! As always, once you are ready to you roll your app out to your end users, make sure to set the strictest rules possible for your use case. When it comes to these rules and security in general, it is a good idea to following the [Principle of Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege). Check out: [Understanding Firebase Realtime Database Rules](https://firebase.google.com/docs/database/security/).
+
+#### Database Structure
+
+The following database structure was created from within the Flamelink CMS:
+
+##### Navigation
+
+![Main Navigation](public/img/main-navigation.png)
+
+- Navigation Name: Main Navigation
+- NaKey: mainNavigation
+- Navigation Items:
+
+```text
+-- Home
+    - Title: Home
+    - URI: /
+    - CSS Class: home-page
+    - Component: Home
+-- About
+    - Title: About
+    - URI: /about
+    - CSS Class: about-page
+    - Component: About
+    -- Our Vision
+        - Title: Our Vision
+        - URI: our-vision
+        - CSS Class: about-page
+        - Component: OurVision
+    -- Who we are
+        - Title: Who we are
+        - URI: who-we-are
+        - CSS Class: about-page
+        - Component: People
+-- Contact Us
+   - Title: Contact Us
+   - URI: /contact-us
+   - CSS Class: contact-us-page
+   - Component: ContactForm
+```
 
 ### Install dependencies
 
