@@ -4,6 +4,8 @@
 
 This aims to be an example of how you would connect Flamelink with your Vue application.
 
+View the app running [here](https://handy-potato.surge.sh)
+
 ## Setup
 
 ### Firebase Project Config
