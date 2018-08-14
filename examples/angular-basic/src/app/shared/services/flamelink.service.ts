@@ -9,20 +9,21 @@ import { FirebaseApp } from 'angularfire2';
 export class FlamelinkService {
 
   // GET|SET flApp
-  private _flApp: any;
-  get flApp(): any {
+  private _flApp: flamelink.App;
+  get flApp(): flamelink.App {
     return this._flApp;
   }
-  set flApp(value: any) {
+  set flApp(value: flamelink.App) {
     this._flApp = value;
   }
 
   constructor(@Inject(FirebaseApp) private _fb: firebase.app.App) {
-    this.flApp = flamelink({
+    const config: flamelink.FlamelinkConfig = {
       firebaseApp: this._fb,
       env: 'production',
       locale: 'en-US'
-    });
+    };
+    this.flApp = flamelink(config);
   }
 
   getApp() {
