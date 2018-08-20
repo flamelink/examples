@@ -17,9 +17,9 @@
   },
   "dependencies": {
     "@nuxtjs/dotenv": "^1.1.1",
-    "firebase": "^5.2.0",
+    "firebase": "^4.12.1",
     "firebase-admin": "^5.12.1",
-    "flamelink": "0.17.1",
+    "flamelink": "^0.18.10",
     "lodash.get": "^4.4.2",
     "nuxt": "^1.4.2"
   },
