@@ -1,0 +1,45 @@
+{
+    "title": "Flamelink + Next.js Blog Example",
+    "name": "flamelink-nextjs-blog",
+    "homepage": "https://github.com/flamelink/examples/examples/nextjs-blog",
+    "demo": "https://github.com/flamelink/examples/examples/nextjs-blog",
+    "description": "This is an example blog using Next.js with Flamelink.",
+    "license": "MIT",
+    "browsers": true,
+    "author": {
+      "name": "Flamelink",
+      "email": "feedback@flamelink.io",
+      "url": "http://flamelink.io"
+    },
+    "maintainers": [
+      "De Wet van der Merwe <dw@flamelink.io> (https://github.com/dewetvdm)",
+      "Jordan Hunt <jordan@flamelink.io> (https://github.com/jordanch)",
+      "JP Erasmus <jp@flamelink.io> (https://github.com/jperasmus)"
+    ],
+    "contributors": [
+      "De Wet van der Merwe <dw@flamelink.io> (https://github.com/dewetvdm)",
+      "Jordan Hunt <jordan@flamelink.io> (https://github.com/jordanch)",
+      "JP Erasmus <jp@flamelink.io> (https://github.com/jperasmus)"
+    ]
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/flamelink/examples.git"
+    },
+    "bugs": {
+      "url": "https://github.com/flamelink/examples/issues"
+    },
+    "badges": {
+      "list": [
+        ['badge', {image: 'https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg', alt: 'Conventional Commits', url: 'https://conventionalcommits.org', title: 'Conventional Commits'}],
+        "---",
+        'twittertweet',
+        'twitterfollow',
+        'githubfollow',
+        'githubstar',
+      ],
+      "config": {
+        "twitterUsername": "FlamelinkCMS",
+        "githubUsername": "flamelink"
+      }
+    }
+}
