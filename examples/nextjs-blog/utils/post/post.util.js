@@ -4,9 +4,10 @@ export function getPostsWithMedia(posts = []) {
   return (
     posts &&
     posts.map(async post => {
-      const { image } = post
-      const [postImage] = image
-      const url = await app.storage.getURL({ fileId: postImage.id })
+      const [image] = post.image
+      const { id } = image
+      const url = await app.storage.getURL({ fileId: id })
+
       post.imageURL = url
 
       return post
