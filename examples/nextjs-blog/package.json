@@ -21,9 +21,11 @@
     "firebase": "^5.9.0",
     "firebase-admin": "^7.1.0",
     "flamelink": "^1.0.0-alpha.0",
+    "markdown-to-jsx": "^6.9.3",
     "next": "^8.0.3",
     "next-routes": "^1.4.2",
     "next-seo": "^1.11.1",
+    "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   },
