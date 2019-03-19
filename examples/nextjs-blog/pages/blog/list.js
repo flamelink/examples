@@ -1,5 +1,6 @@
 import { flamelinkApp as app } from '../../utils/flamelink'
 import { Link } from '../../routes'
+import { getPostsWithMedia, getImageAlt } from '../../utils/post/post.util'
 
 const Posts = function(props) {
   const { posts } = props
@@ -12,7 +13,7 @@ const Posts = function(props) {
         author: { displayName },
         excerpt,
         _fl_meta_: { docId },
-        // imageURL,
+        imageURL,
         date,
       } = post
 
@@ -20,7 +21,7 @@ const Posts = function(props) {
         <div key={docId}>
           <Link route={`/blog/${slug}`}>{`${title} - ${displayName}`}</Link>
           <p>{excerpt}</p>
-          {/* <img src={imageURL} /> */}
+          <img src={imageURL} alt={getImageAlt(post)} />
           <p>{new Date(date).toLocaleDateString()}</p>
         </div>
       )
@@ -33,25 +34,23 @@ const Posts = function(props) {
 Posts.getInitialProps = async () => {
   const posts = await app.content.get({ schemaKey: 'blogPost', populate: true })
   const filteredPosts = await Promise.all(
-    Object.values(posts || {})
-      .filter(post => post.status === 'published')
-      .sort((postA, postB) => {
-        const dateA = new Date(postA.date)
-        const dateB = new Date(postB.date)
+    getPostsWithMedia(
+      Object.values(posts || {})
+        .filter(post => post.status === 'published')
+        .sort((postA, postB) => {
+          // "2019-03-18T12:00:00+02:00"
+          const dateA = new Date(postA.date)
+          const dateB = new Date(postB.date)
 
-        if (dateA < dateB) return -1
-        if (dateA > dateB) return 1
-        return 0
-      })
-      .map(async post => {
-        // const { image } = post
-        // const [postImage] = image
-        // const url = await app.storage.getURL({ fileId: postImage.id })
-        // post.imageURL = url
-        return post
-      })
+          if (dateA < dateB) return -1
+          if (dateA > dateB) return 1
+          return 0
+        })
+    )
   )
+
   console.log(filteredPosts)
+
   return {
     posts: filteredPosts,
   }
