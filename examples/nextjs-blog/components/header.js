@@ -3,6 +3,7 @@
  */
 import React, { useState, useEffect } from 'react'
 import { flamelinkApp } from '../utils/flamelink'
+import { Link } from '../routes'
 
 const Header = () => {
   const [mainNav, setMainNav] = useState(null)
@@ -37,9 +38,15 @@ const Header = () => {
   return (
     <nav>
       <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Blog</li>
+        <li>
+          <Link route="/">Home</Link>
+        </li>
+        <li>
+          <Link route="/blog">Blog</Link>
+        </li>
+        <li>
+          <Link route="/authors">Authors</Link>
+        </li>
       </ul>
     </nav>
   )

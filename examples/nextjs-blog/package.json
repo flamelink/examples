@@ -22,6 +22,7 @@
     "firebase-admin": "^7.1.0",
     "flamelink": "^1.0.0-alpha.0",
     "next": "^8.0.3",
+    "next-routes": "^1.4.2",
     "next-seo": "^1.11.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
@@ -45,9 +46,9 @@
     }
   },
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js",
     "lint": "eslint '**/*.js' --cache",
     "lint:fix": "yarn lint --fix",
     "generate-readme": "projectz compile"
