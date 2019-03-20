@@ -5,8 +5,8 @@ import { getPostsWithMedia, getImageAlt } from '../../utils/post/post.util'
 const Posts = function(props) {
   const { posts } = props
 
-  if (posts && posts.length > 0) {
-    return Object.values(props.posts).map(post => {
+  if (posts) {
+    return posts.map(post => {
       const {
         title,
         slug,
@@ -19,7 +19,11 @@ const Posts = function(props) {
 
       return (
         <div key={docId}>
-          <Link route={`/blog/${slug}`}>{`${title} - ${displayName}`}</Link>
+          <Link route={`/blog/${slug}`}>
+            {/* href gets added to <a> by <Link> */}
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+            <a>{`${title} - ${displayName}`}</a>
+          </Link>
           <p>{excerpt}</p>
           <img src={imageURL} alt={getImageAlt(post)} />
           <p>{new Date(date).toLocaleDateString()}</p>
@@ -28,7 +32,7 @@ const Posts = function(props) {
     })
   }
 
-  return 'No blog posts!'
+  throw new Error('No posts!')
 }
 
 Posts.getInitialProps = async () => {
@@ -48,8 +52,6 @@ Posts.getInitialProps = async () => {
         })
     )
   )
-
-  console.log(filteredPosts)
 
   return {
     posts: filteredPosts,

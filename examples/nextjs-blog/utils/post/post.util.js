@@ -1,4 +1,5 @@
 import { flamelinkApp as app } from '../flamelink'
+import { format } from 'date-fns'
 
 export function getPostsWithMedia(posts = []) {
   return (
@@ -22,4 +23,8 @@ export function getImageAlt(post) {
   } = post
 
   return `${title} by ${displayName}`
+}
+
+export function getDateString(timeStampWithZone) {
+  return format(new Date(timeStampWithZone), 'd MMMM YYYY')
 }
