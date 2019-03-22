@@ -2,11 +2,8 @@ import React, { PureComponent } from 'react'
 import Markdown from 'markdown-to-jsx'
 import PropTypes from 'prop-types'
 import { flamelinkApp as app } from '../../utils/flamelink'
-import {
-  getPostsWithMedia,
-  getImageAlt,
-  getDateString,
-} from '../../utils/post/post.util'
+import { getImageAlt, getDateString } from '../../utils/post/post.util'
+import { DEFAULT_POST_IMAGE_URL } from '../../constants/constants'
 
 class Post extends PureComponent {
   constructor(props) {
@@ -17,19 +14,18 @@ class Post extends PureComponent {
     }
   }
 
-  componentDidMount() {
-    // todo: this isn't so lekker because the path may change in future. is it
-    // possible to share the `query.slug` value from the server's execution with
-    // the client?
+  async componentDidMount() {
     const { pathname } = location
     const slug = pathname.replace('/blog/', '')
 
+    // todo: SDK bug - subscribing using an event type doesn't work
     this._subscription = app.content.subscribe({
       schemaKey: 'blogPost',
-      changeType: 'modified',
-      filters: [['slug', '==', slug]],
-      populate: true,
-      callback: async (error, response) => {
+      // changeType: 'modified',
+      filters: [['slug', '==', slug], ['_fl_meta_.locale', '==', 'en-US']],
+      // fields: Post.fields,
+      populate: Post.populate,
+      callback: (error, response) => {
         if (error) {
           throw new Error(
             'Something went wrong while retrieving all the content. Details:',
@@ -37,9 +33,7 @@ class Post extends PureComponent {
           )
         }
 
-        const [post] = await Promise.all(
-          getPostsWithMedia(Object.values(response || {}))
-        )
+        const [post] = Object.values(response || {})
 
         this.setState({ post })
       },
@@ -48,7 +42,7 @@ class Post extends PureComponent {
 
   componentWillUnmount() {
     // unsubscribe
-    this._subscription()
+    if (this._subscription) this._subscription()
   }
 
   render() {
@@ -61,8 +55,10 @@ class Post extends PureComponent {
         date,
         author: { displayName },
         content,
-        imageURL,
+        image,
       } = updatedPost || post
+
+      const { url } = (image && image[0]) || { url: DEFAULT_POST_IMAGE_URL }
 
       return (
         <div>
@@ -70,7 +66,7 @@ class Post extends PureComponent {
           <h2>{displayName}</h2>
           <p>{getDateString(date)}</p>
           <Markdown>{content}</Markdown>
-          <img src={imageURL} alt={getImageAlt(post)} />
+          <img src={url} alt={getImageAlt(post)} />
         </div>
       )
     }
@@ -79,23 +75,40 @@ class Post extends PureComponent {
   }
 }
 
+Post.populate = [
+  {
+    field: 'author',
+    fields: ['displayName'],
+  },
+]
+
+Post.fields = ['title', 'date', 'content', 'author', 'image']
+
 Post.propTypes = {
-  post: PropTypes.object,
+  post: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    author: PropTypes.shape({
+      displayName: PropTypes.string.isRequired,
+    }),
+    content: PropTypes.string.isRequired,
+    image: PropTypes.array.isRequired,
+  }),
 }
 
 Post.getInitialProps = async function({ query }) {
-  const [post] = await Promise.all(
-    getPostsWithMedia(
-      Object.values(
-        (await app.content.getByField({
-          schemaKey: 'blogPost',
-          field: 'slug',
-          value: query.slug,
-          populate: true,
-        })) || {}
-      )
-    )
+  // todo: SDK bug: fields is not respected
+  const [post] = Object.values(
+    (await app.content.getByField({
+      schemaKey: 'blogPost',
+      field: 'slug',
+      value: query.slug,
+      // fields: Post.fields,
+      populate: Post.populate,
+    })) || {}
   )
+
+  console.log(post)
 
   return {
     post,
