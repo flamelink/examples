@@ -16,7 +16,7 @@ class Post extends PureComponent {
 
   async componentDidMount() {
     const { pathname } = location
-    const slug = pathname.replace('/blog/', '')
+    const slug = pathname.split('/').pop()
 
     // todo: SDK bug - subscribing using an event type doesn't work
     this._subscription = app.content.subscribe({
