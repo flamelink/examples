@@ -605,6 +605,12 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.2.0":
+  version "7.4.2"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.4.2.tgz#f5ab6897320f16decd855eed70b705908a313fe8"
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
 "@babel/template@7.1.2":
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.1.2.tgz#090484a574fef5a2d2d7726a674eceda5c5b5644"
@@ -756,12 +762,10 @@
 "@flamelink/sdk-app-types@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-app-types/-/sdk-app-types-1.0.0-alpha.2.tgz#ea21cc957505b497bc6cbf247a572d057d93b6e7"
-  integrity sha512-OOofSgLBanJtAqLNhs/h6AeUX0JDMguuzKqbYfcs5S4UE1KV9IFB6vApxLeglKJOsgHLBzBHJAKHbwe4RKsE1A==
 
 "@flamelink/sdk-app@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-app/-/sdk-app-1.0.0-alpha.2.tgz#5cae464aeacb0e61b45c8d9b33c7d2d316989812"
-  integrity sha512-g0fWyVMoDPpvFuipuA0yfp+ciqvIo4QRuPrErJ+1awqSEbaJKv45izOjyk3uP2oA7aPXzoEkG0jsM3HonYBkig==
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
     "@flamelink/sdk-utils" "^1.0.0-alpha.1"
@@ -771,14 +775,12 @@
 "@flamelink/sdk-content-types@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-content-types/-/sdk-content-types-1.0.0-alpha.2.tgz#b310b77fffe903708cca250af287f92ddd0b2568"
-  integrity sha512-oFx1fWHST5aO1PNnCOelUplqCVumqAg+6YxdkVBn2N5T8wZJgnMgA6J3UhnVaWugsOkysgIREYUltzLvmWB3aA==
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
 
 "@flamelink/sdk-content@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-content/-/sdk-content-1.0.0-alpha.2.tgz#e919cbb5ca2d8fad0b6105514b20c44c48ea9e2a"
-  integrity sha512-krJB70jGWlgAQdnpGnBnTFLRRU63ifVZtBUMPtv6gibsX4u7OCwPC8FQ52RPW+rZlCaw2SYV12kPE3NFD5GhLA==
   dependencies:
     "@flamelink/sdk-app" "^1.0.0-alpha.2"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
@@ -789,14 +791,12 @@
 "@flamelink/sdk-navigation-types@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-navigation-types/-/sdk-navigation-types-1.0.0-alpha.2.tgz#2d240500bbdc9e6d2cd2d6661d76ccaf2dbd9e73"
-  integrity sha512-bNFVEWZIsSlv8y6BniHu1hfZw8zhnv6xATW15weoSe+LLYGGwzo+IJyfuZ0sILdCWLU62q4C2T96ShlmhO80FA==
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
 
 "@flamelink/sdk-navigation@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-navigation/-/sdk-navigation-1.0.0-alpha.2.tgz#ada28b50a36395d46c348d07c5f6a76725abb891"
-  integrity sha512-AVD5ROFP84xCRphTGEcCVbIOmJ47W4BAz+7jeynDi63aNwAVcFcC+d8tUl1jJhbW1hrD9YeOHOQZ1yG4/Es5kw==
   dependencies:
     "@flamelink/sdk-app" "^1.0.0-alpha.2"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
@@ -807,14 +807,12 @@
 "@flamelink/sdk-schemas-types@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-schemas-types/-/sdk-schemas-types-1.0.0-alpha.2.tgz#3f9dad81ef31b6ccf9536fc6c56952511eae0ed6"
-  integrity sha512-xqeNp5FwnTEguqva6wis6Be6uZmU6YXuJwBlW/HKBsQBlu36ddlCuo9waNFbwruyt9QM/DxxCtw0dVr8bdeN+A==
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
 
 "@flamelink/sdk-schemas@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-schemas/-/sdk-schemas-1.0.0-alpha.2.tgz#505b9941c4de994ebb671a6a5496d10d60ca7f56"
-  integrity sha512-KQDveJpi5ZTN/S3f2oYXGUZ2iJS1nD28yH8oGU9zUS7QLaeMk5/5NhFa+O8OVaDbVKozJknFUrhfjFcNim1GzQ==
   dependencies:
     "@flamelink/sdk-app" "^1.0.0-alpha.2"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
@@ -825,14 +823,12 @@
 "@flamelink/sdk-settings-types@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-settings-types/-/sdk-settings-types-1.0.0-alpha.2.tgz#56b850fe35d99002f58f7d15353cfa3c84ff674a"
-  integrity sha512-yAU72WO8AbEvjC6PI0l1QrHGibiMhEytjQ/+Nls4abWJb/edclj4qc02IkVrRm/PbIwU8jJPvHuaQNWsrsuPjg==
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
 
 "@flamelink/sdk-settings@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-settings/-/sdk-settings-1.0.0-alpha.2.tgz#55c5fb9e05af947350869480c451c8fc13d0df47"
-  integrity sha512-SqEIOg3PF7FR/RGcVkM3h29OkDW2bzzRMF1lGNPcUk2HK7D6K/4duFIkfXIs3AMdh1tfVJ77WRmtNRHAZneikg==
   dependencies:
     "@flamelink/sdk-app" "^1.0.0-alpha.2"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
@@ -844,14 +840,12 @@
 "@flamelink/sdk-storage-types@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-storage-types/-/sdk-storage-types-1.0.0-alpha.2.tgz#37677d3480138bc2930f5a42775d388dbbec8127"
-  integrity sha512-jCkp9+WSqKCyYTe9GdkF6wsSZpsQhV0d4wDN5+ShD4TkSLR+tsaUT4Ntr5KCD5fEVSTfsFWxAdiITxo/gg/iEg==
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
 
 "@flamelink/sdk-storage@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-storage/-/sdk-storage-1.0.0-alpha.2.tgz#966eaf4b9ae3ce68f633e65d1b35fe957cdb4bcc"
-  integrity sha512-pm8GaiTRtILWDLCCYlALArYc7auprUTFKs0XrbNuGQYxa6zlTbrakVs4BVWp83iXTkvG7t85xaLEuJXHSjw1Hw==
   dependencies:
     "@flamelink/sdk-app" "^1.0.0-alpha.2"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
@@ -864,14 +858,12 @@
 "@flamelink/sdk-users-types@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-users-types/-/sdk-users-types-1.0.0-alpha.2.tgz#fc3dd3a102f15f10a76193e64b9a165479dd421b"
-  integrity sha512-bJVnlByK9KIZ6Jh0B2MGz7jOMbM2UI7qtHmC2Pa1aRTIcuNgYAtJwrVYQxMoJm4KPOAS7/C7eZCEU/TjPBrjkw==
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
 
 "@flamelink/sdk-users@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-users/-/sdk-users-1.0.0-alpha.2.tgz#c25b751a9062a5b59c0f8e441ce352dc8f6d279a"
-  integrity sha512-jbxNB1j2lmw2uIeRcKsyQdAqQZ7uG6h1ldJauckdygNbh9ek7MfJnnkZhoGdADCwZTr/a/eVXMxRVeXSN3X6Kw==
   dependencies:
     "@flamelink/sdk-app" "^1.0.0-alpha.2"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
@@ -882,7 +874,6 @@
 "@flamelink/sdk-utils@^1.0.0-alpha.1":
   version "1.0.0-alpha.1"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-utils/-/sdk-utils-1.0.0-alpha.1.tgz#fe623f00903d1cf18da4e6261a89e67e5970ac6f"
-  integrity sha512-P/GfMKr3upFoT3UP8tCy+zQUu+FmrAzCEVBqI6pvyb8Z6gm90y74fHSMDwsM0JA7MzuH1KNy/KY6TBa911odtQ==
   dependencies:
     compose-then "^1.0.1"
     lodash "^4.17.11"
@@ -1500,7 +1491,7 @@ babel-plugin-transform-react-remove-prop-types@0.4.15:
   version "0.4.15"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-react-remove-prop-types/-/babel-plugin-transform-react-remove-prop-types-0.4.15.tgz#7ba830e77276a0e788cd58ea527b5f70396e12a7"
 
-babel-runtime@^6.26.0:
+babel-runtime@^6.23.0, babel-runtime@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
@@ -1565,6 +1556,10 @@ bluebird@^3.5.0, bluebird@^3.5.3:
 bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.4.0:
   version "4.11.8"
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.8.tgz#2cde09eb5ee341f484746bb0309b3253b1b1442f"
+
+bowser@^1.7.3:
+  version "1.9.4"
+  resolved "https://registry.yarnpkg.com/bowser/-/bowser-1.9.4.tgz#890c58a2813a9d3243704334fa81b96a5c150c9a"
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -1780,6 +1775,10 @@ caterpillar@^3.1.2:
     extendr "^3.2.0"
     rfc-log-levels "^1.0.0"
 
+chain-function@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/chain-function/-/chain-function-1.0.1.tgz#c63045e5b4b663fb86f1c6e186adaf1de402a1cc"
+
 chalk@2.4.2, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0, chalk@^2.3.1, chalk@^2.4.1, chalk@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
@@ -1797,6 +1796,10 @@ chalk@^1.0.0, chalk@^1.1.3:
     has-ansi "^2.0.0"
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
+
+change-emitter@^0.1.2:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/change-emitter/-/change-emitter-0.1.6.tgz#e8b2fe3d7f1ab7d69a32199aff91ea6931409515"
 
 chardet@^0.7.0:
   version "0.7.0"
@@ -2002,6 +2005,10 @@ core-js@2.6.5, core-js@^2.4.0, core-js@^2.5.7:
   version "2.6.5"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.5.tgz#44bc8d249e7fb2ff5d00e0341a7ffb94fbf67895"
 
+core-js@^1.0.0:
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
+
 core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
@@ -2087,6 +2094,13 @@ cson-parser@^1.3.0:
   resolved "https://registry.yarnpkg.com/cson-parser/-/cson-parser-1.3.5.tgz#7ec675e039145533bf2a6a856073f1599d9c2d24"
   dependencies:
     coffee-script "^1.10.0"
+
+css-in-js-utils@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/css-in-js-utils/-/css-in-js-utils-2.0.1.tgz#3b472b398787291b47cfe3e44fecfdd9e914ba99"
+  dependencies:
+    hyphenate-style-name "^1.0.2"
+    isobject "^3.0.1"
 
 cyclist@~0.2.2:
   version "0.2.2"
@@ -2242,6 +2256,12 @@ doctrine@^3.0.0:
   resolved "https://registry.yarnpkg.com/doctrine/-/doctrine-3.0.0.tgz#addebead72a6574db783639dc87a121773973961"
   dependencies:
     esutils "^2.0.2"
+
+dom-helpers@^3.2.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-3.4.0.tgz#e9b369700f959f62ecde5a6babde4bccd9169af8"
+  dependencies:
+    "@babel/runtime" "^7.1.2"
 
 dom-storage@2.1.0:
   version "2.1.0"
@@ -2676,6 +2696,18 @@ faye-websocket@0.11.1:
   dependencies:
     websocket-driver ">=0.5.1"
 
+fbjs@^0.8.1:
+  version "0.8.17"
+  resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.17.tgz#c4d598ead6949112653d6588b01a5cdcd9f90fdd"
+  dependencies:
+    core-js "^1.0.0"
+    isomorphic-fetch "^2.1.1"
+    loose-envify "^1.0.0"
+    object-assign "^4.1.0"
+    promise "^7.1.1"
+    setimmediate "^1.0.5"
+    ua-parser-js "^0.7.18"
+
 fellow@^2.3.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/fellow/-/fellow-2.4.0.tgz#43be55f4390be140c9cead3a06e0828a154e6bb8"
@@ -2784,7 +2816,6 @@ firebase@^5.9.0:
 flamelink@^1.0.0-alpha.2:
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/flamelink/-/flamelink-1.0.0-alpha.2.tgz#281757f22d245e6360b223f184fd245d71648444"
-  integrity sha512-oG83qjg9xD14pU95tghgcOo+5xcP9lY80ygeCFRhBFA9ACbDgOXJL8RsqQ7O+xS081vpzmH7OSAnCxNVOQM99w==
   dependencies:
     "@flamelink/sdk-app" "^1.0.0-alpha.2"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
@@ -3172,6 +3203,10 @@ hoist-non-react-statics@3.2.0:
   dependencies:
     react-is "^16.3.2"
 
+hoist-non-react-statics@^2.3.1:
+  version "2.5.5"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
+
 hosted-git-info@^2.1.4:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.7.1.tgz#97f236977bd6e125408930ff6de3eec6281ec047"
@@ -3222,6 +3257,10 @@ husky@^1.3.1:
     read-pkg "^4.0.1"
     run-node "^1.0.0"
     slash "^2.0.0"
+
+hyphenate-style-name@^1.0.2:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/hyphenate-style-name/-/hyphenate-style-name-1.0.3.tgz#097bb7fa0b8f1a9cf0bd5c734cf95899981a9b48"
 
 iconv-lite@^0.4.24, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
   version "0.4.24"
@@ -3291,6 +3330,13 @@ inherits@2.0.1:
 ini@~1.3.0:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
+
+inline-style-prefixer@^3.0.8:
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/inline-style-prefixer/-/inline-style-prefixer-3.0.8.tgz#8551b8e5b4d573244e66a34b04f7d32076a2b534"
+  dependencies:
+    bowser "^1.7.3"
+    css-in-js-utils "^2.0.0"
 
 inquirer@^6.2.2:
   version "6.2.2"
@@ -3520,7 +3566,7 @@ isobject@^3.0.0, isobject@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
 
-isomorphic-fetch@2.2.1:
+isomorphic-fetch@2.2.1, isomorphic-fetch@^2.1.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/isomorphic-fetch/-/isomorphic-fetch-2.2.1.tgz#611ae1acf14f5e81f729507472819fe9733558a9"
   dependencies:
@@ -3621,6 +3667,10 @@ jws@^3.1.4, jws@^3.1.5:
   dependencies:
     jwa "^1.4.1"
     safe-buffer "^5.0.1"
+
+keycode@^2.1.8:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/keycode/-/keycode-2.2.0.tgz#3d0af56dc7b8b8e5cba8d0a97f107204eec22b04"
 
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
@@ -3819,13 +3869,17 @@ lodash.isstring@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/lodash.isstring/-/lodash.isstring-4.0.1.tgz#d527dfb5456eca7cc9bb95d5daeaf88ba54a5451"
 
-lodash.merge@^4.6.1:
+lodash.merge@^4.6.0, lodash.merge@^4.6.1:
   version "4.6.1"
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.1.tgz#adc25d9cb99b9391c59624f379fbba60d7111d54"
 
 lodash.once@^4.0.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.once/-/lodash.once-4.1.1.tgz#0dd3971213c7c56df880977d504c88fb471a97ac"
+
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
 
 lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.17.5:
   version "4.17.11"
@@ -3906,6 +3960,22 @@ matcher@^1.0.0:
   resolved "https://registry.yarnpkg.com/matcher/-/matcher-1.1.1.tgz#51d8301e138f840982b338b116bb0c09af62c1c2"
   dependencies:
     escape-string-regexp "^1.0.4"
+
+material-ui@^0.20.2:
+  version "0.20.2"
+  resolved "https://registry.yarnpkg.com/material-ui/-/material-ui-0.20.2.tgz#5fc9b4b62b691d3b16c89d8e54597a0412b52c7d"
+  dependencies:
+    babel-runtime "^6.23.0"
+    inline-style-prefixer "^3.0.8"
+    keycode "^2.1.8"
+    lodash.merge "^4.6.0"
+    lodash.throttle "^4.1.1"
+    prop-types "^15.5.7"
+    react-event-listener "^0.6.2"
+    react-transition-group "^1.2.1"
+    recompose "^0.26.0"
+    simple-assign "^0.1.0"
+    warning "^3.0.0"
 
 maximatch@^0.1.0:
   version "0.1.0"
@@ -4707,7 +4777,7 @@ promise-polyfill@8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/promise-polyfill/-/promise-polyfill-8.1.0.tgz#30059da54d1358ce905ac581f287e184aedf995d"
 
-promise@^7.0.1:
+promise@^7.0.1, promise@^7.1.1:
   version "7.3.1"
   resolved "https://registry.yarnpkg.com/promise/-/promise-7.3.1.tgz#064b72602b18f90f29192b8b1bc418ffd1ebd3bf"
   dependencies:
@@ -4728,7 +4798,7 @@ prop-types@15.6.2:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
-prop-types@^15.6.2:
+prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.6.0, prop-types@^15.6.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   dependencies:
@@ -4867,6 +4937,14 @@ react-error-overlay@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
 
+react-event-listener@^0.6.2:
+  version "0.6.6"
+  resolved "https://registry.yarnpkg.com/react-event-listener/-/react-event-listener-0.6.6.tgz#758f7b991cad9086dd39fd29fad72127e1d8962a"
+  dependencies:
+    "@babel/runtime" "^7.2.0"
+    prop-types "^15.6.0"
+    warning "^4.0.1"
+
 react-is@16.6.3:
   version "16.6.3"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.6.3.tgz#d2d7462fcfcbe6ec0da56ad69047e47e56e7eac0"
@@ -4874,6 +4952,16 @@ react-is@16.6.3:
 react-is@^16.3.2, react-is@^16.8.1:
   version "16.8.4"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.4.tgz#90f336a68c3a29a096a3d648ab80e87ec61482a2"
+
+react-transition-group@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-1.2.1.tgz#e11f72b257f921b213229a774df46612346c7ca6"
+  dependencies:
+    chain-function "^1.0.0"
+    dom-helpers "^3.2.0"
+    loose-envify "^1.3.1"
+    prop-types "^15.5.6"
+    warning "^3.0.0"
 
 react@^16.8.4:
   version "16.8.4"
@@ -4937,6 +5025,15 @@ readdirp@^2.2.1:
     micromatch "^3.1.10"
     readable-stream "^2.0.2"
 
+recompose@^0.26.0:
+  version "0.26.0"
+  resolved "https://registry.yarnpkg.com/recompose/-/recompose-0.26.0.tgz#9babff039cb72ba5bd17366d55d7232fbdfb2d30"
+  dependencies:
+    change-emitter "^0.1.2"
+    fbjs "^0.8.1"
+    hoist-non-react-statics "^2.3.1"
+    symbol-observable "^1.0.4"
+
 recursive-copy@2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/recursive-copy/-/recursive-copy-2.0.6.tgz#d590f9eb5f165b96a1b80bc8f9cbcb5c6f9c89e9"
@@ -4973,6 +5070,10 @@ regenerator-runtime@^0.11.0:
 regenerator-runtime@^0.12.0:
   version "0.12.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.12.1.tgz#fa1a71544764c036f8c49b13a08b2594c9f8a0de"
+
+regenerator-runtime@^0.13.2:
+  version "0.13.2"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.2.tgz#32e59c9a6fb9b1a4aff09b4930ca2d4477343447"
 
 regenerator-transform@^0.13.4:
   version "0.13.4"
@@ -5215,7 +5316,7 @@ set-value@^2.0.0:
     is-plain-object "^2.0.3"
     split-string "^3.0.1"
 
-setimmediate@^1.0.4:
+setimmediate@^1.0.4, setimmediate@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/setimmediate/-/setimmediate-1.0.5.tgz#290cbb232e306942d7d7ea9b83732ab7856f8285"
 
@@ -5252,6 +5353,10 @@ shell-quote@^1.6.1:
 signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
+
+simple-assign@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/simple-assign/-/simple-assign-0.1.0.tgz#17fd3066a5f3d7738f50321bb0f14ca281cc4baa"
 
 simple-git@^1.85.0:
   version "1.107.0"
@@ -5587,7 +5692,7 @@ supports-color@^5.3.0:
   dependencies:
     has-flag "^3.0.0"
 
-symbol-observable@^1.1.0:
+symbol-observable@^1.0.4, symbol-observable@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
 
@@ -5772,6 +5877,10 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
+ua-parser-js@^0.7.18:
+  version "0.7.19"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.19.tgz#94151be4c0a7fb1d001af7022fdaca4642659e4b"
+
 unbounded@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/unbounded/-/unbounded-1.2.0.tgz#9be43ccfa5cbc0fcd177bc7b96298deba9177117"
@@ -5917,6 +6026,18 @@ vm-browserify@0.0.4:
 walkdir@^0.3.0, walkdir@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/walkdir/-/walkdir-0.3.2.tgz#ac8437a288c295656848ebc19981ebc677a5f590"
+
+warning@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/warning/-/warning-3.0.0.tgz#32e5377cb572de4ab04753bdf8821c01ed605b7c"
+  dependencies:
+    loose-envify "^1.0.0"
+
+warning@^4.0.1:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
+  dependencies:
+    loose-envify "^1.0.0"
 
 watchpack@^1.5.0:
   version "1.6.0"
