@@ -18,10 +18,10 @@
     "real-time"
   ],
   "dependencies": {
+    "@material-ui/core": "^3.9.2",
     "firebase": "^5.9.0",
     "firebase-admin": "^7.1.0",
     "flamelink": "^1.0.0-alpha.2",
-    "material-ui": "^0.20.2",
     "next": "^8.0.3",
     "next-routes": "^1.4.2",
     "next-seo": "^1.11.1",
