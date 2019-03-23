@@ -48,6 +48,7 @@ class MyApp extends App {
             --footer-bg-color: #161616;
             --footer-text-color: #fff;
             --container-wide: 85rem;
+            --container-medium: 56rem;
           }
 
           html {
@@ -95,6 +96,14 @@ class MyApp extends App {
             line-height: 1.11;
             letter-spacing: normal;
             color: var(--primary-color);
+          }
+
+          h4 {
+            font-size: 2rem;
+            font-weight: 400;
+            line-height: 1.14;
+            color: var(--primary-color);
+            margin: 0 0 1.5rem;
           }
 
           strong {

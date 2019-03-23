@@ -7,3 +7,11 @@ export const containerWide = css`
     margin-right: auto;
   }
 `
+
+export const containerInner = css`
+  div {
+    max-width: var(--container-medium);
+    margin-left: auto;
+    margin-right: auto;
+  }
+`
