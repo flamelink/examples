@@ -19,12 +19,11 @@ class Post extends PureComponent {
     const { pathname } = location
     const slug = pathname.split('/').pop()
 
-    // todo: SDK bug - subscribing using an event type doesn't work
     this._subscription = app.content.subscribe({
       schemaKey: 'blogPost',
-      // changeType: 'modified',
+      changeType: 'modified',
       filters: [['slug', '==', slug]],
-      // fields: Post.fields,
+      fields: Post.fields,
       populate: Post.populate,
       callback: (error, response) => {
         if (error) {
@@ -139,13 +138,12 @@ Post.propTypes = {
 }
 
 Post.getInitialProps = async function({ query }) {
-  // todo: SDK bug: fields is not respected
   const [post] = Object.values(
     (await app.content.getByField({
       schemaKey: 'blogPost',
       field: 'slug',
       value: query.slug,
-      // fields: Post.fields,
+      fields: Post.fields,
       populate: Post.populate,
     })) || {}
   )
