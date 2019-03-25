@@ -45,17 +45,14 @@ const Header = () => {
         <nav>
           <ul>
             {mainNav.items.map(item => (
-              <li key={item.uuid}>
+              <li key={item.uuid} className={item.cssClass}>
                 <Link route={item.url}>
-                  <a>{item.title}</a>
+                  <a target={item.newWindow ? '_blank' : '_self'}>
+                    {item.title}
+                  </a>
                 </Link>
               </li>
             ))}
-            <li>
-              <button onClick={() => window.alert('Example button clicked')}>
-                Example
-              </button>
-            </li>
           </ul>
         </nav>
       </div>
@@ -76,8 +73,11 @@ const Header = () => {
         li {
           margin-left: 2.14rem;
           font-size: 1.14rem;
-          border-bottom: 1px solid transparent;
           transition: all 0.2s ease;
+        }
+
+        li:not(.button) {
+          border-bottom: 1px solid transparent;
         }
 
         li:first-child {
