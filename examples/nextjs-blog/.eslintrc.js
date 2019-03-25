@@ -1,5 +1,5 @@
 module.exports = {
-  // parser: 'babel-eslint',
+  parser: 'babel-eslint',
   env: {
     browser: true,
     node: true,
@@ -19,6 +19,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'jsx-a11y/anchor-is-valid': 0,
     'prettier/prettier': 'error',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
