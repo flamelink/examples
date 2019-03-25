@@ -1,23 +1,57 @@
+import React, { PureComponent } from 'react'
 import { flamelinkApp as app } from '../../utils/flamelink'
 import PropTypes from 'prop-types'
 
-const Profile = function(props = {}) {
-  const { user } = props
-
-  if (!user) {
-    return 'No user data'
+class Profile extends PureComponent {
+  constructor(props) {
+    super(props)
+    this.state = {
+      user: null,
+    }
   }
 
-  const { displayName, email, enabled, id } = user
+  async componentDidMount() {
+    const { pathname } = location
+    const id = pathname.split('/').pop()
 
-  return (
-    <div>
-      <h1>{displayName}</h1>
-      <h2>{email}</h2>
-      <h4>{`Enabled: ${enabled}`}</h4>
-      <h4>{id}</h4>
-    </div>
-  )
+    this._subscription = app.users.subscribe({
+      uid: id,
+      callback: (error, response) => {
+        if (error) {
+          throw new Error(
+            'Something went wrong while retrieving user. Details:',
+            error
+          )
+        }
+
+        this.setState({ user: response })
+      },
+    })
+  }
+
+  componentWillUnmount() {
+    this._subscription && this._subscription()
+  }
+
+  render() {
+    const { user } = this.props
+    const { user: updatedUser } = this.state
+
+    if (!user || !updatedUser) {
+      return 'No user data'
+    }
+
+    const { displayName, email, enabled, id } = updatedUser || user
+
+    return (
+      <div>
+        <h1>{displayName}</h1>
+        <h2>{email}</h2>
+        <h4>{`Enabled: ${enabled}`}</h4>
+        <h4>{id}</h4>
+      </div>
+    )
+  }
 }
 
 Profile.getInitialProps = async ({ query }) => {
@@ -38,7 +72,7 @@ Profile.propTypes = {
     id: PropTypes.string.isRequired,
     lastName: PropTypes.string.isRequired,
     permissions: PropTypes.object.isRequired,
-  }),
+  }).isRequired,
 }
 
 export default Profile
