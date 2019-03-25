@@ -1,8 +1,10 @@
 import React, { useState, useEffect, Fragment } from 'react'
+import PropTypes from 'prop-types'
+import { withRouter } from 'next/router'
 import { flamelinkApp } from '../utils/flamelink'
 import { Link } from '../routes'
 
-const Nav = () => {
+const Nav = ({ router }) => {
   const [mainNav, setMainNav] = useState(null)
   const [navError, setNavError] = useState(null)
 
@@ -36,7 +38,13 @@ const Nav = () => {
       <nav>
         <ul>
           {mainNav.items.map(item => (
-            <li key={item.uuid} className={item.cssClass}>
+            <li
+              key={item.uuid}
+              className={[
+                item.cssClass,
+                router.asPath === item.url ? 'active' : '',
+              ].join(' ')}
+            >
               <Link route={item.url}>
                 <a target={item.newWindow ? '_blank' : '_self'}>{item.title}</a>
               </Link>
@@ -66,7 +74,8 @@ const Nav = () => {
           margin-left: 0;
         }
 
-        li:hover {
+        li:hover,
+        li.active {
           border-bottom-color: var(--primary-color);
         }
       `}</style>
@@ -74,4 +83,8 @@ const Nav = () => {
   )
 }
 
-export default Nav
+Nav.propTypes = {
+  router: PropTypes.object.isRequired,
+}
+
+export default withRouter(Nav)
