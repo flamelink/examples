@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import Markdown from 'markdown-to-jsx'
 import PropTypes from 'prop-types'
+import NextError from 'next/error'
 import { flamelinkApp as app } from '../../utils/flamelink'
 import { getImageAlt, getDateString } from '../../utils/post/post.util'
 import { DEFAULT_POST_IMAGE_URL } from '../../constants/constants'
@@ -56,7 +57,13 @@ class Post extends PureComponent {
         author: { displayName },
         content,
         image,
+        status,
       } = updatedPost || post
+
+      // Only show published posts
+      if (status !== 'published') {
+        return <NextError statusCode={404} />
+      }
 
       const { url } = (image && image[0]) || { url: DEFAULT_POST_IMAGE_URL }
 
@@ -112,7 +119,7 @@ class Post extends PureComponent {
       )
     }
 
-    throw new Error('No post!')
+    return <NextError statusCode={404} />
   }
 }
 
@@ -123,11 +130,12 @@ Post.populate = [
   },
 ]
 
-Post.fields = ['title', 'date', 'content', 'author', 'image']
+Post.fields = ['title', 'date', 'content', 'author', 'image', 'status']
 
 Post.propTypes = {
   post: PropTypes.shape({
     title: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     author: PropTypes.shape({
       displayName: PropTypes.string.isRequired,
