@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { flamelinkApp as app } from '../../utils/flamelink'
 import { getImageAlt, getDateString } from '../../utils/post/post.util'
 import { DEFAULT_POST_IMAGE_URL } from '../../constants/constants'
+import { containerInner } from '../../components/styled'
 
 class Post extends PureComponent {
   constructor(props) {
@@ -22,7 +23,7 @@ class Post extends PureComponent {
     this._subscription = app.content.subscribe({
       schemaKey: 'blogPost',
       // changeType: 'modified',
-      filters: [['slug', '==', slug], ['_fl_meta_.locale', '==', 'en-US']],
+      filters: [['slug', '==', slug]],
       // fields: Post.fields,
       populate: Post.populate,
       callback: (error, response) => {
@@ -61,13 +62,54 @@ class Post extends PureComponent {
       const { url } = (image && image[0]) || { url: DEFAULT_POST_IMAGE_URL }
 
       return (
-        <div>
-          <h1>{title}</h1>
-          <h2>{displayName}</h2>
-          <p>{getDateString(date)}</p>
-          <Markdown>{content}</Markdown>
-          <img src={url} alt={getImageAlt(post)} />
-        </div>
+        <>
+          <header className="banner">
+            <img src={url} alt={getImageAlt(post)} />
+            <div className="post-meta">
+              <p>{`${getDateString(date)} ${displayName}`}</p>
+              <h1>{title}</h1>
+            </div>
+          </header>
+          <div className={containerInner.className}>
+            <Markdown>{content}</Markdown>
+            <style jsx>{`
+              :global(.pageSection) {
+                margin-bottom: 4.28rem;
+              }
+
+              :global(.banner) {
+                width: 100%;
+                position: relative;
+              }
+
+              :global(.banner > img) {
+                width: 100%;
+              }
+
+              :global(.post-meta) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+              }
+
+              :global(.post-meta > h1) {
+                text-shadow: 0px 0px 10px var(--text-color);
+              }
+
+              :global(.post-meta > p) {
+                text-shadow: 0px 0px 10px var(--text-color);
+              }
+            `}</style>
+            <style jsx>{containerInner}</style>
+          </div>
+        </>
       )
     }
 
@@ -107,8 +149,6 @@ Post.getInitialProps = async function({ query }) {
       populate: Post.populate,
     })) || {}
   )
-
-  console.log(post)
 
   return {
     post,
