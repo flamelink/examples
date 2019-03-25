@@ -1,20 +1,20 @@
+import { flamelinkApp as app } from '../../utils/flamelink'
 import { Link } from '../../routes'
 
-const Authors = function(props) {
-  return Object.values(props.posts).map(post => (
-    <h3>
-      <Link route={`/authors/${post.id}`}>{post.fullName}</Link>
+const Authors = function(props = {}) {
+  const { authors } = props
+  return Object.values(authors).map(author => (
+    <h3 key={author.id}>
+      <Link route={`/authors/${author.id}`}>{author.displayName}</Link>
     </h3>
   ))
 }
 
-Authors.getInitialProps = async ({ query }) => {
+Authors.getInitialProps = async () => {
+  const authors = await app.users.get()
+
   return {
-    posts: {
-      author1: { fullName: 'JP Erasmus', id: 'asd1' },
-      author2: { fullName: 'Jordan Hunt', id: 'asd2' },
-      author3: { fullName: 'De Wet vd Merwe', id: 'asd3' },
-    },
+    authors,
   }
 }
 
