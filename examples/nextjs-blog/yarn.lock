@@ -766,7 +766,6 @@
 "@flamelink/sdk-app@^1.0.0-alpha.3":
   version "1.0.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-app/-/sdk-app-1.0.0-alpha.3.tgz#d7fe16178ccab54c183e08eb95abf3a7230e442b"
-  integrity sha512-1B+1TnWdYiblsKyIvElHiGu86NaBKMxYwgR1U59vjn3hwmJa+b5gtcN56bepQNmk6gnUK8/Coh5BSA7o5U4cIw==
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
     "@flamelink/sdk-utils" "^1.0.0-alpha.3"
@@ -782,7 +781,6 @@
 "@flamelink/sdk-content@^1.0.0-alpha.3":
   version "1.0.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-content/-/sdk-content-1.0.0-alpha.3.tgz#5d4bf1bba92ae0b16e6f52e67864068aeca58981"
-  integrity sha512-ZG8OgsCOFRunxva9fA0UroWYiLy54w6WOA9ngQundq4np3y/dM8F9y1W8Lr8fREBc2wLRdnEMYebr5G5fjEUcA==
   dependencies:
     "@flamelink/sdk-app" "^1.0.0-alpha.3"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
@@ -799,7 +797,6 @@
 "@flamelink/sdk-navigation@^1.0.0-alpha.3":
   version "1.0.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-navigation/-/sdk-navigation-1.0.0-alpha.3.tgz#589eab6278b0717f80b1292c5fec10557edbc379"
-  integrity sha512-9SFWTkYC9QXWGK3xYyZdDxDa4cFhdWmXlFEKqYkR2q85epgZkxUAgZiGpRwbcV4TyG2Cgozu6vkWzXJNW6626A==
   dependencies:
     "@flamelink/sdk-app" "^1.0.0-alpha.3"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
@@ -816,7 +813,6 @@
 "@flamelink/sdk-schemas@^1.0.0-alpha.3":
   version "1.0.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-schemas/-/sdk-schemas-1.0.0-alpha.3.tgz#f1817eb9cd3d25bb0f22e70198e567a31be8f95f"
-  integrity sha512-1USnZ7LyFPnEL1eIMVWhbnJpj0b5OEdSpUGRFfet2MRJXGgOU28AbbtZOShyXJGBOOcgIwbx+k16yVsvo9BvqA==
   dependencies:
     "@flamelink/sdk-app" "^1.0.0-alpha.3"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
@@ -833,7 +829,6 @@
 "@flamelink/sdk-settings@^1.0.0-alpha.3":
   version "1.0.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-settings/-/sdk-settings-1.0.0-alpha.3.tgz#ca3138bb1b87ffd9e3e323ede5cf9776e1bb17ae"
-  integrity sha512-QmM3YARIRkeuCYoWEc5a4q9I3fkZfGvVit6wf8r7RozvJRJiKT054/P8m+PAaBkDK1XZzBDwPYGMma1xGPO4UQ==
   dependencies:
     "@flamelink/sdk-app" "^1.0.0-alpha.3"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
@@ -851,7 +846,6 @@
 "@flamelink/sdk-storage@^1.0.0-alpha.3":
   version "1.0.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-storage/-/sdk-storage-1.0.0-alpha.3.tgz#16d4d81e29a4c941ebd79292fcd7dea980358f30"
-  integrity sha512-K33OiQq3SeiPdMIaMIMJ8e9qXUaW9nKepe0+tqEXP5EeLTG+OUG28fOw2YrdR2tCxXiC+UdiPt19IMsEt2qb5g==
   dependencies:
     "@flamelink/sdk-app" "^1.0.0-alpha.3"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
@@ -870,7 +864,6 @@
 "@flamelink/sdk-users@^1.0.0-alpha.3":
   version "1.0.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-users/-/sdk-users-1.0.0-alpha.3.tgz#a1308c806b29ba66d10aa469b4a2cc0f5aff2469"
-  integrity sha512-JPguAMygS1fyNbrMBl/VvcEzol2xr4sIogtk/kzL4pbAN9ImI4Q0v4XkGmd0vL7FFJSup/i23fI8rP+USd0iUg==
   dependencies:
     "@flamelink/sdk-app" "^1.0.0-alpha.3"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
@@ -881,7 +874,6 @@
 "@flamelink/sdk-utils@^1.0.0-alpha.3":
   version "1.0.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-utils/-/sdk-utils-1.0.0-alpha.3.tgz#c194a8147dec662c1b0bfd89fe23ceb28df92359"
-  integrity sha512-Tco2eywLYeFuqJD2YbZbpFsNa1lVEZ2kDIRgFCd8KoPxbAcrQ/DDA+MBbwEX1ncNRKIxrFvEtb86oFjXkSfnEw==
   dependencies:
     compose-then "^1.0.1"
     lodash "^4.17.11"
@@ -2522,6 +2514,10 @@ enhanced-resolve@^4.1.0:
     memory-fs "^0.4.0"
     tapable "^1.0.0"
 
+enquire.js@^2.1.6:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/enquire.js/-/enquire.js-2.1.6.tgz#3e8780c9b8b835084c3f60e166dbc3c2a3c89814"
+
 ent@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/ent/-/ent-2.2.0.tgz#e964219325a21d05f44466a2f686ed6ce5f5dd1d"
@@ -2959,7 +2955,6 @@ firebase@^5.9.0:
 flamelink@^1.0.0-alpha.3:
   version "1.0.0-alpha.3"
   resolved "https://registry.yarnpkg.com/flamelink/-/flamelink-1.0.0-alpha.3.tgz#d1eafcd5822a36604b9e14bff1fba2221cb30da9"
-  integrity sha512-No9GmvNZ6e96bnPZiTAkDfiir5WSDzZKzIwyL+qv8wvc9TKQ0cOStL0kBPROaglYX+8Qw5R/uhlKKGRXO3AoYw==
   dependencies:
     "@flamelink/sdk-app" "^1.0.0-alpha.3"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
@@ -3774,6 +3769,12 @@ json-stable-stringify-without-jsonify@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz#9db7b59496ad3f3cfef30a75142d2d930ad72651"
 
+json2mq@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/json2mq/-/json2mq-0.2.0.tgz#b637bd3ba9eabe122c83e9720483aeb10d2c904a"
+  dependencies:
+    string-convert "^0.2.0"
+
 json5@^0.5.0:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/json5/-/json5-0.5.1.tgz#1eade7acc012034ad84e2396767ead9fa5495821"
@@ -4030,6 +4031,10 @@ lodash.camelcase@^4.3.0:
 lodash.clone@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.clone/-/lodash.clone-4.5.0.tgz#195870450f5a13192478df4bc3d23d2dea1907b6"
+
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
 
 lodash.has@^4.5.2:
   version "4.5.2"
@@ -4913,7 +4918,7 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@^1.16.4:
+prettier@^1.14.3, prettier@^1.16.4:
   version "1.16.4"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.16.4.tgz#73e37e73e018ad2db9c76742e2647e21790c9717"
 
@@ -5146,6 +5151,17 @@ react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
+react-slick@^0.23.2:
+  version "0.23.2"
+  resolved "https://registry.yarnpkg.com/react-slick/-/react-slick-0.23.2.tgz#8d8bdbc77a6678e8ad36f50c32578c7c0f1c54f6"
+  dependencies:
+    classnames "^2.2.5"
+    enquire.js "^2.1.6"
+    json2mq "^0.2.0"
+    lodash.debounce "^4.0.8"
+    prettier "^1.14.3"
+    resize-observer-polyfill "^1.5.0"
+
 react-transition-group@^2.2.1:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.7.0.tgz#60ca3bb2bf83fe71c50816a936e985ce7b8134dc"
@@ -5318,6 +5334,10 @@ repeat-element@^1.1.2:
 repeat-string@^1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/repeat-string/-/repeat-string-1.6.1.tgz#8dcae470e1c88abc2d600fff4a776286da75e637"
+
+resize-observer-polyfill@^1.5.0:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
 
 resolve-from@^3.0.0:
   version "3.0.0"
@@ -5765,6 +5785,10 @@ streamsearch@0.1.2:
 string-argv@^0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/string-argv/-/string-argv-0.0.2.tgz#dac30408690c21f3c3630a3ff3a05877bdcbd736"
+
+string-convert@^0.2.0:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/string-convert/-/string-convert-0.2.1.tgz#6982cc3049fbb4cd85f8b24568b9d9bf39eeff97"
 
 string-hash@1.1.3:
   version "1.1.3"

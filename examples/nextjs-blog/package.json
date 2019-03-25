@@ -29,7 +29,8 @@
     "next-seo": "^1.11.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "react-slick": "^0.23.2"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
