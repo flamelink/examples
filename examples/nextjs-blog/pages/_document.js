@@ -189,6 +189,11 @@ class CustomDocument extends Document {
               max-width: 100%;
             }
 
+            .button > a {
+              color: inherit;
+              background-color: transparent;
+            }
+
             button:hover,
             .button:hover {
               color: #fff;

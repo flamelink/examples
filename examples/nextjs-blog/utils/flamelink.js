@@ -22,6 +22,12 @@ if (process.browser) {
         storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
         messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
       })
+
+  // The example uses Cloud Firestore, so let's enable offline persistence to improve performance
+  firebaseApp
+    .firestore()
+    .enablePersistence()
+    .catch(console.error)
 } else {
   // Only importing `firebase-admin` here so that it does not end up in the client-side bundle
   const admin = require('firebase-admin')
