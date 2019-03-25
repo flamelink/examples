@@ -180,7 +180,8 @@ class CustomDocument extends Document {
               max-width: 100%;
             }
 
-            button:hover {
+            button:hover,
+            .button:hover {
               color: #fff;
               background-color: var(--primary-color);
             }

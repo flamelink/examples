@@ -1,4 +1,4 @@
-// eslint-disable-next-line
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import FacebookIcon from '../assets/img/facebook.svg'
 import TwitterIcon from '../assets/img/twitter.svg'
