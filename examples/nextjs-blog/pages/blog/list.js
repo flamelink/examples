@@ -55,7 +55,7 @@ class Posts extends PureComponent {
     const { posts } = this.props
     const { posts: updatedPosts } = this.state
 
-    if (!posts || !updatedPosts) {
+    if (!posts && !updatedPosts) {
       return <h4>No posts yet :(</h4>
     }
 
