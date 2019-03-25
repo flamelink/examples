@@ -47,6 +47,10 @@ class Posts extends PureComponent {
     })
   }
 
+  componentWillUnmount() {
+    this._subscription && this._subscription()
+  }
+
   render() {
     const { posts } = this.props
     const { posts: updatedPosts } = this.state
