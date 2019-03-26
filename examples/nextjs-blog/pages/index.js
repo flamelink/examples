@@ -61,7 +61,7 @@ const Home = function(props) {
     })
   }
 
-  function renderSuggestedPostSlider(suggestedImagesURLs) {
+  function renderSuggestedPostSlider(suggestedPosts) {
     return (
       <Carousel
         cellAlign="left"
@@ -69,20 +69,22 @@ const Home = function(props) {
         wrapAround={false}
         slidesToScroll={1}
       >
-        {suggestedImagesURLs.map((imageURL, i) => (
-          <div key={imageURL}>
-            <img
-              src={imageURL}
-              alt={`Slider post ${i}`}
-              style={{ height: '400px' }}
-            />
-          </div>
-        ))}
+        {suggestedPosts.map(post => {
+          const { title, url, slug } = post
+
+          return (
+            <div key={slug}>
+              <Link route={`/blog/${slug}`}>
+                <img src={url} alt={title} />
+              </Link>
+            </div>
+          )
+        })}
       </Carousel>
     )
   }
 
-  const { posts, suggestedImagesURLs } = props
+  const { posts, suggestedPosts } = props
 
   if (!posts) {
     return <h4>No posts yet :(</h4>
@@ -90,7 +92,7 @@ const Home = function(props) {
 
   return (
     <div className={containerWide.className}>
-      {renderSuggestedPostSlider(suggestedImagesURLs)}
+      {renderSuggestedPostSlider(suggestedPosts)}
       <h1>Latest Posts</h1>
       <Grid container justify="flex-start" spacing={32} className="pageSection">
         {renderPostCards(posts)}
@@ -132,7 +134,7 @@ Home.populate = [
 
 Home.propTypes = {
   posts: PropTypes.array.isRequired,
-  suggestedImagesURLs: PropTypes.array.isRequired,
+  suggestedPosts: PropTypes.array.isRequired,
 }
 
 Home.getInitialProps = async () => {
@@ -150,19 +152,29 @@ Home.getInitialProps = async () => {
       })
     ) || {}
 
-  const suggestedImagesURLs = posts
+  const suggestedPosts = posts
     .filter(post => post.suggested)
     .map(post => {
       try {
-        return post.image[0].url
+        return {
+          url: post.image[0].url,
+          slug: post.slug,
+          title: post.title,
+        }
       } catch (error) {
-        return DEFAULT_POST_IMAGE_URL
+        console.error(error)
+
+        return {
+          url: DEFAULT_POST_IMAGE_URL,
+          slug: post.slug,
+          title: post.title,
+        }
       }
     })
 
   return {
     posts: posts.slice(0, 4),
-    suggestedImagesURLs,
+    suggestedPosts,
   }
 }
 
