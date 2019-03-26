@@ -1,5 +1,5 @@
 import React from 'react'
-import Carousel from 'nuka-carousel'
+// import Carousel from 'nuka-carousel'
 import PropTypes from 'prop-types'
 import {
   Grid,
@@ -62,26 +62,28 @@ const Home = function(props) {
   }
 
   function renderSuggestedPostSlider(suggestedPosts) {
-    return (
-      <Carousel
-        cellAlign="left"
-        heightMode="max"
-        wrapAround={false}
-        slidesToScroll={1}
-      >
-        {suggestedPosts.map(post => {
-          const { title, url, slug } = post
+    console.log(suggestedPosts)
+    // return (
+    //   <Carousel
+    //     cellAlign="left"
+    //     heightMode="max"
+    //     wrapAround={false}
+    //     slidesToScroll={1}
+    //   >
+    //     {suggestedPosts.map(post => {
+    //       console.log(post)
+    //       const { title, url, slug } = post
 
-          return (
-            <div key={slug}>
-              <Link route={`/blog/${slug}`}>
-                <img src={url} alt={title} />
-              </Link>
-            </div>
-          )
-        })}
-      </Carousel>
-    )
+    //       return (
+    //         <div key={slug}>
+    //           <Link route={`/blog/${slug}`}>
+    //             <img src={url} alt={title} />
+    //           </Link>
+    //         </div>
+    //       )
+    //     })}
+    //   </Carousel>
+    // )
   }
 
   const { posts, suggestedPosts } = props
@@ -92,6 +94,7 @@ const Home = function(props) {
 
   return (
     <div className={containerWide.className}>
+      <h1>Welcome to our awesome blog!</h1>
       {renderSuggestedPostSlider(suggestedPosts)}
       <h1>Latest Posts</h1>
       <Grid container justify="flex-start" spacing={32} className="pageSection">
@@ -138,42 +141,30 @@ Home.propTypes = {
 }
 
 Home.getInitialProps = async () => {
-  const posts =
-    Object.values(
-      await app.content.get({
-        schemaKey: 'blogPost',
-        filters: [['status', '==', 'published']],
-        orderBy: {
-          field: 'date',
-          order: 'asc',
-        },
-        populate: Home.populate,
-        fields: Home.fields,
-      })
-    ) || {}
+  const posts = Object.values(
+    (await app.content.get({
+      schemaKey: 'blogPost',
+      filters: [['status', '==', 'published']],
+      orderBy: {
+        field: 'date',
+        order: 'asc',
+      },
+      limit: 3,
+      populate: Home.populate,
+      fields: Home.fields,
+    })) || {}
+  )
 
-  const suggestedPosts = posts
-    .filter(post => post.suggested)
-    .map(post => {
-      try {
-        return {
-          url: post.image[0].url,
-          slug: post.slug,
-          title: post.title,
-        }
-      } catch (error) {
-        console.error(error)
-
-        return {
-          url: DEFAULT_POST_IMAGE_URL,
-          slug: post.slug,
-          title: post.title,
-        }
-      }
-    })
+  const suggestedPosts = Object.values(
+    (await app.content.get({
+      schemaKey: 'home',
+      populate: [{ field: 'suggestedPost', subFields: ['post', 'image'] }],
+      fields: ['content', 'suggestedPost'],
+    })) || {}
+  )
 
   return {
-    posts: posts.slice(0, 4),
+    posts,
     suggestedPosts,
   }
 }
