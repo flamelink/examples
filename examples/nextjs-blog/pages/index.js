@@ -61,8 +61,8 @@ const Home = function(props) {
     })
   }
 
-  function renderSuggestedPostSlider(suggestedPosts) {
-    console.log(suggestedPosts)
+  function renderSuggestedPostSlider(home) {
+    console.log(home)
     // return (
     //   <Carousel
     //     cellAlign="left"
@@ -86,7 +86,7 @@ const Home = function(props) {
     // )
   }
 
-  const { posts, suggestedPosts } = props
+  const { posts, home } = props
 
   if (!posts) {
     return <h4>No posts yet :(</h4>
@@ -94,9 +94,9 @@ const Home = function(props) {
 
   return (
     <div className={containerWide.className}>
-      <h1>Welcome to our awesome blog!</h1>
-      {renderSuggestedPostSlider(suggestedPosts)}
-      <h1>Latest Posts</h1>
+      {home.content}
+      {renderSuggestedPostSlider(home)}
+      <h2>Latest Posts</h2>
       <Grid container justify="flex-start" spacing={32} className="pageSection">
         {renderPostCards(posts)}
       </Grid>
@@ -137,7 +137,10 @@ Home.populate = [
 
 Home.propTypes = {
   posts: PropTypes.array.isRequired,
-  suggestedPosts: PropTypes.array.isRequired,
+  home: PropTypes.shape({
+    content: PropTypes.string.isRequired,
+    suggestedPost: PropTypes.array.isRequired,
+  }).isRequired,
 }
 
 Home.getInitialProps = async () => {
@@ -155,17 +158,16 @@ Home.getInitialProps = async () => {
     })) || {}
   )
 
-  const suggestedPosts = Object.values(
-    (await app.content.get({
-      schemaKey: 'home',
-      populate: [{ field: 'suggestedPost', subFields: ['post', 'image'] }],
-      fields: ['content', 'suggestedPost'],
-    })) || {}
-  )
+  const home = await app.content.get({
+    schemaKey: 'home',
+    // todo: jp - fix `populate` functionality for repeaters
+    // populate: [{ field: 'suggestedPost', subFields: ['post', 'image'] }],
+    fields: ['content', 'suggestedPost'],
+  })
 
   return {
     posts,
-    suggestedPosts,
+    home,
   }
 }
 
