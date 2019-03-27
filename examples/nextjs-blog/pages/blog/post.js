@@ -2,8 +2,13 @@ import React, { PureComponent } from 'react'
 import Markdown from 'markdown-to-jsx'
 import PropTypes from 'prop-types'
 import NextError from 'next/error'
+import NextSeo, { ArticleJsonLd } from 'next-seo'
 import { flamelinkApp as app } from '../../utils/flamelink'
-import { getImageAlt, getDateString } from '../../utils/post/post.util'
+import {
+  getImageAlt,
+  getDateString,
+  getDateFromTimestamp,
+} from '../../utils/post/post.util'
 import { DEFAULT_POST_IMAGE_URL } from '../../constants/constants'
 import { containerInner } from '../../components/styled'
 
@@ -54,18 +59,24 @@ class Post extends PureComponent {
       const {
         title,
         date,
-        author: { displayName },
+        author,
         content,
         image,
         status,
+        seo,
+        tags,
+        _fl_meta_: { createdDate, lastModifiedDate },
       } = updatedPost || post
+
+      const { displayName } = author
 
       // Only show published posts
       if (status !== 'published') {
         return <NextError statusCode={404} />
       }
 
-      const { url } = (image && image[0]) || { url: DEFAULT_POST_IMAGE_URL }
+      const postImage = (image && image[0]) || { url: DEFAULT_POST_IMAGE_URL }
+      const { url } = postImage
 
       return (
         <>
@@ -115,6 +126,55 @@ class Post extends PureComponent {
             `}</style>
             <style jsx>{containerInner}</style>
           </div>
+          <NextSeo
+            config={{
+              title: seo.ogTitle || seo.metaTitle || title,
+              description: seo.metaDescription,
+              openGraph: {
+                title: seo.ogTitle || seo.metaTitle || title,
+                description: seo.ogDescription || seo.metaDescription,
+                url:
+                  seo.ogUrl || seo.canonicalUrl || typeof window !== 'undefined'
+                    ? window.location.href
+                    : '',
+                type: seo.ogType || 'article',
+                article: {
+                  publishedTime: getDateFromTimestamp(
+                    createdDate
+                  ).toISOString(),
+                  modifiedTime: getDateFromTimestamp(
+                    lastModifiedDate
+                  ).toISOString(),
+                  section: 'Section II',
+                  authors: [
+                    `${
+                      typeof window !== 'undefined'
+                        ? window.location.origin
+                        : ''
+                    }/authors/${author.id}`,
+                  ],
+                  tags,
+                },
+                images: [
+                  {
+                    url: seo.ogImage || url,
+                    alt: seo.ogTitle || title,
+                  },
+                ],
+              },
+            }}
+          />
+          <ArticleJsonLd
+            url={url}
+            title={seo.metaTitle || title}
+            images={[url]}
+            datePublished={getDateFromTimestamp(createdDate).toISOString()}
+            dateModified={getDateFromTimestamp(lastModifiedDate).toISOString()}
+            authorName={displayName}
+            publisherName="Flamelink"
+            publisherLogo="https://www.example.com/photos/logo.jpg"
+            description={seo.metaDescription}
+          />
         </>
       )
     }
@@ -126,11 +186,21 @@ class Post extends PureComponent {
 Post.populate = [
   {
     field: 'author',
-    fields: ['displayName'],
+    fields: ['displayName', 'id'],
   },
 ]
 
-Post.fields = ['title', 'date', 'content', 'author', 'image', 'status']
+Post.fields = [
+  '_fl_meta_',
+  'title',
+  'date',
+  'content',
+  'author',
+  'image',
+  'status',
+  'seo',
+  'tags',
+]
 
 Post.propTypes = {
   post: PropTypes.shape({
@@ -139,9 +209,11 @@ Post.propTypes = {
     date: PropTypes.string.isRequired,
     author: PropTypes.shape({
       displayName: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
     }),
     content: PropTypes.string.isRequired,
     image: PropTypes.array.isRequired,
+    seo: PropTypes.object.isRequired,
   }),
 }
 
