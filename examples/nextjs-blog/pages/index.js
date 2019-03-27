@@ -1,5 +1,5 @@
 import React from 'react'
-// import Carousel from 'nuka-carousel'
+import Carousel from 'nuka-carousel'
 import PropTypes from 'prop-types'
 import {
   Grid,
@@ -61,29 +61,28 @@ const Home = function(props) {
     })
   }
 
-  function renderSuggestedPostSlider(home) {
-    console.log(home)
-    // return (
-    //   <Carousel
-    //     cellAlign="left"
-    //     heightMode="max"
-    //     wrapAround={false}
-    //     slidesToScroll={1}
-    //   >
-    //     {suggestedPosts.map(post => {
-    //       console.log(post)
-    //       const { title, url, slug } = post
-
-    //       return (
-    //         <div key={slug}>
-    //           <Link route={`/blog/${slug}`}>
-    //             <img src={url} alt={title} />
-    //           </Link>
-    //         </div>
-    //       )
-    //     })}
-    //   </Carousel>
-    // )
+  function renderSuggestedPostSlider(suggestedPosts) {
+    return (
+      <Carousel
+        cellAlign="left"
+        heightMode="max"
+        wrapAround={false}
+        slidesToScroll={1}
+      >
+        {suggestedPosts.map(suggestedPost => {
+          const { image, post } = suggestedPost
+          const { url } = image[0]
+          const { slug, title } = post[0]
+          return (
+            <div key={slug}>
+              <Link route={`/blog/${slug}`}>
+                <img src={url} alt={title} />
+              </Link>
+            </div>
+          )
+        })}
+      </Carousel>
+    )
   }
 
   const { posts, home } = props
@@ -94,8 +93,8 @@ const Home = function(props) {
 
   return (
     <div className={containerWide.className}>
-      {home.content}
-      {renderSuggestedPostSlider(home)}
+      <h1>{home.content}</h1>
+      {renderSuggestedPostSlider(home.suggestedPost)}
       <h2>Latest Posts</h2>
       <Grid container justify="flex-start" spacing={32} className="pageSection">
         {renderPostCards(posts)}
@@ -133,6 +132,7 @@ Home.populate = [
     field: 'author',
     fields: ['displayName'],
   },
+  'image',
 ]
 
 Home.propTypes = {
@@ -160,8 +160,19 @@ Home.getInitialProps = async () => {
 
   const home = await app.content.get({
     schemaKey: 'home',
-    // todo: jp - fix `populate` functionality for repeaters
-    // populate: [{ field: 'suggestedPost', subFields: ['post', 'image'] }],
+    populate: [
+      {
+        field: 'suggestedPost',
+        subFields: [
+          {
+            field: 'post',
+            // if you wanted to get the nested image from the related post
+            // populate: ['image']
+          },
+          'image',
+        ],
+      },
+    ],
     fields: ['content', 'suggestedPost'],
   })
 
