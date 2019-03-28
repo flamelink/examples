@@ -763,13 +763,13 @@
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-app-types/-/sdk-app-types-1.0.0-alpha.2.tgz#ea21cc957505b497bc6cbf247a572d057d93b6e7"
 
-"@flamelink/sdk-app@^1.0.0-alpha.3":
-  version "1.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@flamelink/sdk-app/-/sdk-app-1.0.0-alpha.3.tgz#d7fe16178ccab54c183e08eb95abf3a7230e442b"
-  integrity sha512-1B+1TnWdYiblsKyIvElHiGu86NaBKMxYwgR1U59vjn3hwmJa+b5gtcN56bepQNmk6gnUK8/Coh5BSA7o5U4cIw==
+"@flamelink/sdk-app@^1.0.0-alpha.7":
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@flamelink/sdk-app/-/sdk-app-1.0.0-alpha.7.tgz#d6196082931e629e569e396bf91261b7fb11b915"
+  integrity sha512-s3trBqqyePiGz2FIuqiY3Yf+PIeDgLznRlp9i3J+Ih+3pbfo5Rw2yeROtDBSAFNg4lrAm4cOw3hg+x0XzpJNlg==
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
-    "@flamelink/sdk-utils" "^1.0.0-alpha.3"
+    "@flamelink/sdk-utils" "^1.0.0-alpha.7"
     "@types/lodash" "^4.14.120"
     lodash "^4.17.11"
 
@@ -779,16 +779,16 @@
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
 
-"@flamelink/sdk-content@^1.0.0-alpha.3":
-  version "1.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@flamelink/sdk-content/-/sdk-content-1.0.0-alpha.3.tgz#5d4bf1bba92ae0b16e6f52e67864068aeca58981"
-  integrity sha512-ZG8OgsCOFRunxva9fA0UroWYiLy54w6WOA9ngQundq4np3y/dM8F9y1W8Lr8fREBc2wLRdnEMYebr5G5fjEUcA==
+"@flamelink/sdk-content@^1.0.0-alpha.7":
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@flamelink/sdk-content/-/sdk-content-1.0.0-alpha.7.tgz#5897f91c0e946310c17fb244cd7fd8f77a958589"
+  integrity sha512-wUqw3y5pd7GC5qvJ922Ro7k6EFZKGUmfPSUwejwcVs34LW6e7IuGuUTAmwVPwNBPzn1lRkt5w4IBx8U9Shcl7g==
   dependencies:
-    "@flamelink/sdk-app" "^1.0.0-alpha.3"
+    "@flamelink/sdk-app" "^1.0.0-alpha.7"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
     "@flamelink/sdk-content-types" "^1.0.0-alpha.2"
-    "@flamelink/sdk-schemas" "^1.0.0-alpha.3"
-    "@flamelink/sdk-utils" "^1.0.0-alpha.3"
+    "@flamelink/sdk-schemas" "^1.0.0-alpha.7"
+    "@flamelink/sdk-utils" "^1.0.0-alpha.7"
 
 "@flamelink/sdk-navigation-types@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
@@ -796,15 +796,15 @@
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
 
-"@flamelink/sdk-navigation@^1.0.0-alpha.3":
-  version "1.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@flamelink/sdk-navigation/-/sdk-navigation-1.0.0-alpha.3.tgz#589eab6278b0717f80b1292c5fec10557edbc379"
-  integrity sha512-9SFWTkYC9QXWGK3xYyZdDxDa4cFhdWmXlFEKqYkR2q85epgZkxUAgZiGpRwbcV4TyG2Cgozu6vkWzXJNW6626A==
+"@flamelink/sdk-navigation@^1.0.0-alpha.7":
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@flamelink/sdk-navigation/-/sdk-navigation-1.0.0-alpha.7.tgz#b89bc27ea865973aa3519a6b2b0ffe7f35672623"
+  integrity sha512-Uqotrb3U4dsv8bSBmYx8g5PfA5T6kzmGF5WaY3xBs4l2k2z+xN+ES7OGA1bN5fg2chwLliUPXJ4Zo4CuqiX3wA==
   dependencies:
-    "@flamelink/sdk-app" "^1.0.0-alpha.3"
+    "@flamelink/sdk-app" "^1.0.0-alpha.7"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
     "@flamelink/sdk-navigation-types" "^1.0.0-alpha.2"
-    "@flamelink/sdk-utils" "^1.0.0-alpha.3"
+    "@flamelink/sdk-utils" "^1.0.0-alpha.7"
     compose-then "^1.0.1"
 
 "@flamelink/sdk-schemas-types@^1.0.0-alpha.2":
@@ -813,15 +813,15 @@
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
 
-"@flamelink/sdk-schemas@^1.0.0-alpha.3":
-  version "1.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@flamelink/sdk-schemas/-/sdk-schemas-1.0.0-alpha.3.tgz#f1817eb9cd3d25bb0f22e70198e567a31be8f95f"
-  integrity sha512-1USnZ7LyFPnEL1eIMVWhbnJpj0b5OEdSpUGRFfet2MRJXGgOU28AbbtZOShyXJGBOOcgIwbx+k16yVsvo9BvqA==
+"@flamelink/sdk-schemas@^1.0.0-alpha.7":
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@flamelink/sdk-schemas/-/sdk-schemas-1.0.0-alpha.7.tgz#582a0aeec486b8b3c3f43e6d5783611b3093c76e"
+  integrity sha512-MbU+nLoyYRSI4bndZomUjzFpnXmgMYU2OFyyKSYBalez7juko+Mtv9LdJDf4nPY/1jyz6Ft+WOs3XllWfHovTQ==
   dependencies:
-    "@flamelink/sdk-app" "^1.0.0-alpha.3"
+    "@flamelink/sdk-app" "^1.0.0-alpha.7"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
     "@flamelink/sdk-schemas-types" "^1.0.0-alpha.2"
-    "@flamelink/sdk-utils" "^1.0.0-alpha.3"
+    "@flamelink/sdk-utils" "^1.0.0-alpha.7"
     compose-then "^1.0.1"
 
 "@flamelink/sdk-settings-types@^1.0.0-alpha.2":
@@ -830,15 +830,15 @@
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
 
-"@flamelink/sdk-settings@^1.0.0-alpha.3":
-  version "1.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@flamelink/sdk-settings/-/sdk-settings-1.0.0-alpha.3.tgz#ca3138bb1b87ffd9e3e323ede5cf9776e1bb17ae"
-  integrity sha512-QmM3YARIRkeuCYoWEc5a4q9I3fkZfGvVit6wf8r7RozvJRJiKT054/P8m+PAaBkDK1XZzBDwPYGMma1xGPO4UQ==
+"@flamelink/sdk-settings@^1.0.0-alpha.7":
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@flamelink/sdk-settings/-/sdk-settings-1.0.0-alpha.7.tgz#a3847a40501e69234107039a675d5555dfe9ff74"
+  integrity sha512-890pkbDcGIU+ri81uksCn4mYlN9m2nc6vpmXVsxvCIVNPqIcLc6m8XW0T/Ejem4LRuut5VTsrEM5nXw0g2MbVA==
   dependencies:
-    "@flamelink/sdk-app" "^1.0.0-alpha.3"
+    "@flamelink/sdk-app" "^1.0.0-alpha.7"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
     "@flamelink/sdk-settings-types" "^1.0.0-alpha.2"
-    "@flamelink/sdk-utils" "^1.0.0-alpha.3"
+    "@flamelink/sdk-utils" "^1.0.0-alpha.7"
     compose-then "^1.0.1"
     lodash "^4.17.11"
 
@@ -848,15 +848,15 @@
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
 
-"@flamelink/sdk-storage@^1.0.0-alpha.3":
-  version "1.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@flamelink/sdk-storage/-/sdk-storage-1.0.0-alpha.3.tgz#16d4d81e29a4c941ebd79292fcd7dea980358f30"
-  integrity sha512-K33OiQq3SeiPdMIaMIMJ8e9qXUaW9nKepe0+tqEXP5EeLTG+OUG28fOw2YrdR2tCxXiC+UdiPt19IMsEt2qb5g==
+"@flamelink/sdk-storage@^1.0.0-alpha.7":
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@flamelink/sdk-storage/-/sdk-storage-1.0.0-alpha.7.tgz#0f08437df0eff48a483dd29eae5d51d2c7fdf2b7"
+  integrity sha512-4k4gQQ/SrZ5ibbW24AXL/mPHCv6+IR5+LqIipDaGXSAuG01WzQNUeIec3HFHIkgWJ6gZtAc29Mp0A9dknYt11w==
   dependencies:
-    "@flamelink/sdk-app" "^1.0.0-alpha.3"
+    "@flamelink/sdk-app" "^1.0.0-alpha.7"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
     "@flamelink/sdk-storage-types" "^1.0.0-alpha.2"
-    "@flamelink/sdk-utils" "^1.0.0-alpha.3"
+    "@flamelink/sdk-utils" "^1.0.0-alpha.7"
     browser-image-resizer "^1.2.0"
     compose-then "^1.0.1"
     lodash "^4.17.11"
@@ -867,21 +867,21 @@
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
 
-"@flamelink/sdk-users@^1.0.0-alpha.3":
-  version "1.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@flamelink/sdk-users/-/sdk-users-1.0.0-alpha.3.tgz#a1308c806b29ba66d10aa469b4a2cc0f5aff2469"
-  integrity sha512-JPguAMygS1fyNbrMBl/VvcEzol2xr4sIogtk/kzL4pbAN9ImI4Q0v4XkGmd0vL7FFJSup/i23fI8rP+USd0iUg==
+"@flamelink/sdk-users@^1.0.0-alpha.7":
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@flamelink/sdk-users/-/sdk-users-1.0.0-alpha.7.tgz#b18d9fe94c3951aed505ffc416b8406d80a2b605"
+  integrity sha512-phVJRjd8NW5Xau9KYyI3WAFBiKAKQe9yLIzvraBw/YPhqOQCbZqH3zC0MLPfPAZJWBwG5fBBj7Vu11k+tjgClQ==
   dependencies:
-    "@flamelink/sdk-app" "^1.0.0-alpha.3"
+    "@flamelink/sdk-app" "^1.0.0-alpha.7"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
     "@flamelink/sdk-users-types" "^1.0.0-alpha.2"
-    "@flamelink/sdk-utils" "^1.0.0-alpha.3"
+    "@flamelink/sdk-utils" "^1.0.0-alpha.7"
     compose-then "^1.0.1"
 
-"@flamelink/sdk-utils@^1.0.0-alpha.3":
-  version "1.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@flamelink/sdk-utils/-/sdk-utils-1.0.0-alpha.3.tgz#c194a8147dec662c1b0bfd89fe23ceb28df92359"
-  integrity sha512-Tco2eywLYeFuqJD2YbZbpFsNa1lVEZ2kDIRgFCd8KoPxbAcrQ/DDA+MBbwEX1ncNRKIxrFvEtb86oFjXkSfnEw==
+"@flamelink/sdk-utils@^1.0.0-alpha.7":
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@flamelink/sdk-utils/-/sdk-utils-1.0.0-alpha.7.tgz#06829fb5a8e3efaf6d13528e913a63d3f1a43604"
+  integrity sha512-1nMlL/jZ8eqLrwdn4OecTZN/eTX7KENX6l7rwXv+JmJL1ndIvzIQYNGpuF46q55j3b6CUfNr+tDtCCX0XLq0Zw==
   dependencies:
     compose-then "^1.0.1"
     lodash "^4.17.11"
@@ -2956,19 +2956,19 @@ firebase@^5.9.0:
     "@firebase/polyfill" "0.3.9"
     "@firebase/storage" "0.2.12"
 
-flamelink@^1.0.0-alpha.3:
-  version "1.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/flamelink/-/flamelink-1.0.0-alpha.3.tgz#d1eafcd5822a36604b9e14bff1fba2221cb30da9"
-  integrity sha512-No9GmvNZ6e96bnPZiTAkDfiir5WSDzZKzIwyL+qv8wvc9TKQ0cOStL0kBPROaglYX+8Qw5R/uhlKKGRXO3AoYw==
+flamelink@^1.0.0-alpha.7:
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/flamelink/-/flamelink-1.0.0-alpha.7.tgz#9fc41cb43ebf0578abeee2adfedfc3f5be366a9c"
+  integrity sha512-DIwNM+68fNi6bPmXTrlhA7SRP5YzyRpHwtT5UIZYAVl5oZsHTYvZmX7povaYd5BwFBAgMz86UiDi/fLU6DxUng==
   dependencies:
-    "@flamelink/sdk-app" "^1.0.0-alpha.3"
+    "@flamelink/sdk-app" "^1.0.0-alpha.7"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
-    "@flamelink/sdk-content" "^1.0.0-alpha.3"
-    "@flamelink/sdk-navigation" "^1.0.0-alpha.3"
-    "@flamelink/sdk-schemas" "^1.0.0-alpha.3"
-    "@flamelink/sdk-settings" "^1.0.0-alpha.3"
-    "@flamelink/sdk-storage" "^1.0.0-alpha.3"
-    "@flamelink/sdk-users" "^1.0.0-alpha.3"
+    "@flamelink/sdk-content" "^1.0.0-alpha.7"
+    "@flamelink/sdk-navigation" "^1.0.0-alpha.7"
+    "@flamelink/sdk-schemas" "^1.0.0-alpha.7"
+    "@flamelink/sdk-settings" "^1.0.0-alpha.7"
+    "@flamelink/sdk-storage" "^1.0.0-alpha.7"
+    "@flamelink/sdk-users" "^1.0.0-alpha.7"
     compose-then "^1.0.1"
 
 flat-cache@^2.0.1:
