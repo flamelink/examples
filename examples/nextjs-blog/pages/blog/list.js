@@ -32,6 +32,7 @@ class Posts extends PureComponent {
       },
       populate: Posts.populate,
       fields: Posts.fields,
+      size: Posts.postImageOption,
       callback: (error, response) => {
         if (error) {
           throw new Error(
@@ -145,7 +146,12 @@ Posts.populate = [
     field: 'author',
     fields: ['displayName'],
   },
+  'image',
 ]
+
+Posts.postImageOption = {
+  width: 667,
+}
 
 Posts.propTypes = {
   posts: PropTypes.arrayOf(
@@ -180,6 +186,7 @@ Posts.getInitialProps = async () => {
       },
       populate: Posts.populate,
       fields: Posts.fields,
+      size: Posts.postImageOption,
     })) || {}
   )
 

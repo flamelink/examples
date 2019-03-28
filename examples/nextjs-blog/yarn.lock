@@ -762,12 +762,10 @@
 "@flamelink/sdk-app-types@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-app-types/-/sdk-app-types-1.0.0-alpha.2.tgz#ea21cc957505b497bc6cbf247a572d057d93b6e7"
-  integrity sha512-OOofSgLBanJtAqLNhs/h6AeUX0JDMguuzKqbYfcs5S4UE1KV9IFB6vApxLeglKJOsgHLBzBHJAKHbwe4RKsE1A==
 
 "@flamelink/sdk-app@^1.0.0-alpha.7":
   version "1.0.0-alpha.7"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-app/-/sdk-app-1.0.0-alpha.7.tgz#d6196082931e629e569e396bf91261b7fb11b915"
-  integrity sha512-s3trBqqyePiGz2FIuqiY3Yf+PIeDgLznRlp9i3J+Ih+3pbfo5Rw2yeROtDBSAFNg4lrAm4cOw3hg+x0XzpJNlg==
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
     "@flamelink/sdk-utils" "^1.0.0-alpha.7"
@@ -777,14 +775,12 @@
 "@flamelink/sdk-content-types@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-content-types/-/sdk-content-types-1.0.0-alpha.2.tgz#b310b77fffe903708cca250af287f92ddd0b2568"
-  integrity sha512-oFx1fWHST5aO1PNnCOelUplqCVumqAg+6YxdkVBn2N5T8wZJgnMgA6J3UhnVaWugsOkysgIREYUltzLvmWB3aA==
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
 
 "@flamelink/sdk-content@^1.0.0-alpha.7":
   version "1.0.0-alpha.7"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-content/-/sdk-content-1.0.0-alpha.7.tgz#5897f91c0e946310c17fb244cd7fd8f77a958589"
-  integrity sha512-wUqw3y5pd7GC5qvJ922Ro7k6EFZKGUmfPSUwejwcVs34LW6e7IuGuUTAmwVPwNBPzn1lRkt5w4IBx8U9Shcl7g==
   dependencies:
     "@flamelink/sdk-app" "^1.0.0-alpha.7"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
@@ -795,14 +791,12 @@
 "@flamelink/sdk-navigation-types@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-navigation-types/-/sdk-navigation-types-1.0.0-alpha.2.tgz#2d240500bbdc9e6d2cd2d6661d76ccaf2dbd9e73"
-  integrity sha512-bNFVEWZIsSlv8y6BniHu1hfZw8zhnv6xATW15weoSe+LLYGGwzo+IJyfuZ0sILdCWLU62q4C2T96ShlmhO80FA==
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
 
 "@flamelink/sdk-navigation@^1.0.0-alpha.7":
   version "1.0.0-alpha.7"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-navigation/-/sdk-navigation-1.0.0-alpha.7.tgz#b89bc27ea865973aa3519a6b2b0ffe7f35672623"
-  integrity sha512-Uqotrb3U4dsv8bSBmYx8g5PfA5T6kzmGF5WaY3xBs4l2k2z+xN+ES7OGA1bN5fg2chwLliUPXJ4Zo4CuqiX3wA==
   dependencies:
     "@flamelink/sdk-app" "^1.0.0-alpha.7"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
@@ -813,14 +807,12 @@
 "@flamelink/sdk-schemas-types@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-schemas-types/-/sdk-schemas-types-1.0.0-alpha.2.tgz#3f9dad81ef31b6ccf9536fc6c56952511eae0ed6"
-  integrity sha512-xqeNp5FwnTEguqva6wis6Be6uZmU6YXuJwBlW/HKBsQBlu36ddlCuo9waNFbwruyt9QM/DxxCtw0dVr8bdeN+A==
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
 
 "@flamelink/sdk-schemas@^1.0.0-alpha.7":
   version "1.0.0-alpha.7"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-schemas/-/sdk-schemas-1.0.0-alpha.7.tgz#582a0aeec486b8b3c3f43e6d5783611b3093c76e"
-  integrity sha512-MbU+nLoyYRSI4bndZomUjzFpnXmgMYU2OFyyKSYBalez7juko+Mtv9LdJDf4nPY/1jyz6Ft+WOs3XllWfHovTQ==
   dependencies:
     "@flamelink/sdk-app" "^1.0.0-alpha.7"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
@@ -831,14 +823,12 @@
 "@flamelink/sdk-settings-types@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-settings-types/-/sdk-settings-types-1.0.0-alpha.2.tgz#56b850fe35d99002f58f7d15353cfa3c84ff674a"
-  integrity sha512-yAU72WO8AbEvjC6PI0l1QrHGibiMhEytjQ/+Nls4abWJb/edclj4qc02IkVrRm/PbIwU8jJPvHuaQNWsrsuPjg==
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
 
 "@flamelink/sdk-settings@^1.0.0-alpha.7":
   version "1.0.0-alpha.7"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-settings/-/sdk-settings-1.0.0-alpha.7.tgz#a3847a40501e69234107039a675d5555dfe9ff74"
-  integrity sha512-890pkbDcGIU+ri81uksCn4mYlN9m2nc6vpmXVsxvCIVNPqIcLc6m8XW0T/Ejem4LRuut5VTsrEM5nXw0g2MbVA==
   dependencies:
     "@flamelink/sdk-app" "^1.0.0-alpha.7"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
@@ -850,14 +840,12 @@
 "@flamelink/sdk-storage-types@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-storage-types/-/sdk-storage-types-1.0.0-alpha.2.tgz#37677d3480138bc2930f5a42775d388dbbec8127"
-  integrity sha512-jCkp9+WSqKCyYTe9GdkF6wsSZpsQhV0d4wDN5+ShD4TkSLR+tsaUT4Ntr5KCD5fEVSTfsFWxAdiITxo/gg/iEg==
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
 
 "@flamelink/sdk-storage@^1.0.0-alpha.7":
   version "1.0.0-alpha.7"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-storage/-/sdk-storage-1.0.0-alpha.7.tgz#0f08437df0eff48a483dd29eae5d51d2c7fdf2b7"
-  integrity sha512-4k4gQQ/SrZ5ibbW24AXL/mPHCv6+IR5+LqIipDaGXSAuG01WzQNUeIec3HFHIkgWJ6gZtAc29Mp0A9dknYt11w==
   dependencies:
     "@flamelink/sdk-app" "^1.0.0-alpha.7"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
@@ -870,14 +858,12 @@
 "@flamelink/sdk-users-types@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-users-types/-/sdk-users-types-1.0.0-alpha.2.tgz#fc3dd3a102f15f10a76193e64b9a165479dd421b"
-  integrity sha512-bJVnlByK9KIZ6Jh0B2MGz7jOMbM2UI7qtHmC2Pa1aRTIcuNgYAtJwrVYQxMoJm4KPOAS7/C7eZCEU/TjPBrjkw==
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
 
 "@flamelink/sdk-users@^1.0.0-alpha.7":
   version "1.0.0-alpha.7"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-users/-/sdk-users-1.0.0-alpha.7.tgz#b18d9fe94c3951aed505ffc416b8406d80a2b605"
-  integrity sha512-phVJRjd8NW5Xau9KYyI3WAFBiKAKQe9yLIzvraBw/YPhqOQCbZqH3zC0MLPfPAZJWBwG5fBBj7Vu11k+tjgClQ==
   dependencies:
     "@flamelink/sdk-app" "^1.0.0-alpha.7"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
@@ -888,7 +874,6 @@
 "@flamelink/sdk-utils@^1.0.0-alpha.7":
   version "1.0.0-alpha.7"
   resolved "https://registry.yarnpkg.com/@flamelink/sdk-utils/-/sdk-utils-1.0.0-alpha.7.tgz#06829fb5a8e3efaf6d13528e913a63d3f1a43604"
-  integrity sha512-1nMlL/jZ8eqLrwdn4OecTZN/eTX7KENX6l7rwXv+JmJL1ndIvzIQYNGpuF46q55j3b6CUfNr+tDtCCX0XLq0Zw==
   dependencies:
     compose-then "^1.0.1"
     lodash "^4.17.11"
@@ -1099,19 +1084,18 @@
 "@types/lodash@^4.14.120":
   version "4.14.123"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.123.tgz#39be5d211478c8dd3bdae98ee75bb7efe4abfe4d"
-  integrity sha512-pQvPkc4Nltyx7G1Ww45OjVqUsJP4UsZm+GWJpigXgkikZqJgRm4c48g027o6tdgubWHwFRF15iFd+Y4Pmqv6+Q==
 
 "@types/long@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/long/-/long-4.0.0.tgz#719551d2352d301ac8b81db732acb6bdc28dbdef"
 
 "@types/node@*":
-  version "11.11.6"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.11.6.tgz#df929d1bb2eee5afdda598a41930fe50b43eaa6a"
+  version "11.12.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.12.0.tgz#ec5594728811dc2797e42396cfcdf786f2052c12"
 
 "@types/node@^10.1.0":
-  version "10.14.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.14.3.tgz#170a81168620d931cc3b83460be253cadd3028f1"
+  version "10.14.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.14.4.tgz#1c586b991457cbb58fef51bc4e0cfcfa347714b5"
 
 "@types/node@^8.0.53":
   version "8.10.45"
@@ -1128,8 +1112,8 @@
     "@types/react" "*"
 
 "@types/react@*":
-  version "16.8.8"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.8.tgz#4b60a469fd2469f7aa6eaa0f8cfbc51f6d76e662"
+  version "16.8.10"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.10.tgz#1ccb6fde17f71a62ef055382ec68bdc379d4d8d9"
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
@@ -1653,8 +1637,8 @@ bignumber.js@^7.0.0:
   resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-7.2.1.tgz#80c048759d826800807c4bfd521e50edbba57a5f"
 
 binary-extensions@^1.0.0:
-  version "1.13.0"
-  resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.13.0.tgz#9523e001306a32444b907423f1de2164222f6ab1"
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.13.1.tgz#598afe54755b2868a5330d2aff9d4ebb53209b65"
 
 bluebird@^3.5.0, bluebird@^3.5.3:
   version "3.5.3"
@@ -1697,7 +1681,6 @@ brorand@^1.0.1:
 browser-image-resizer@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/browser-image-resizer/-/browser-image-resizer-1.2.0.tgz#7cbe7e3aa4c01f83f5441585208d90df40fa1696"
-  integrity sha512-xMiB6BnRsD6RWmkD6Av90qXY7uaAOXJPaS5D8cSazyao/bx6ENCm67XGl6BIhn1ETjK52yEs8A/atmMPp74M4A==
 
 browserify-aes@^1.0.0, browserify-aes@^1.0.4:
   version "1.2.0"
@@ -1854,8 +1837,8 @@ camelcase@^2.0.1:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-2.1.1.tgz#7c1d16d679a1bbe59ca02cacecfb011e201f5a1f"
 
 caniuse-lite@^1.0.30000951:
-  version "1.0.30000951"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000951.tgz#c7c2fd4d71080284c8677dd410368df8d83688fe"
+  version "1.0.30000955"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000955.tgz#360fdb9a1e41d6dd996130411334e44a39e4446d"
 
 case-sensitive-paths-webpack-plugin@2.1.2:
   version "2.1.2"
@@ -2050,7 +2033,6 @@ component-emitter@^1.2.1:
 compose-then@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/compose-then/-/compose-then-1.0.1.tgz#35638ac1cac0c3321dc276a822270562d6ebf3a5"
-  integrity sha512-6DrHIYVRahidQ/uI114BWWDei+WniPGwh93FFsX4u7zBOUKGfaNFDWW/9ayTVnQD6z3XU+LiFIN3H035Sxncaw==
 
 compressible@^2.0.12:
   version "2.0.16"
@@ -2485,8 +2467,8 @@ ee-first@1.1.1:
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
 electron-to-chromium@^1.3.116:
-  version "1.3.119"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.119.tgz#9a7770da667252aeb81f667853f67c2b26e00197"
+  version "1.3.120"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.120.tgz#ee94e683f4686683674be0f626a5e468cccf7d15"
 
 elegant-spinner@^1.0.1:
   version "1.0.1"
@@ -2981,7 +2963,6 @@ firebase@^5.9.0:
 flamelink@^1.0.0-alpha.7:
   version "1.0.0-alpha.7"
   resolved "https://registry.yarnpkg.com/flamelink/-/flamelink-1.0.0-alpha.7.tgz#9fc41cb43ebf0578abeee2adfedfc3f5be366a9c"
-  integrity sha512-DIwNM+68fNi6bPmXTrlhA7SRP5YzyRpHwtT5UIZYAVl5oZsHTYvZmX7povaYd5BwFBAgMz86UiDi/fLU6DxUng==
   dependencies:
     "@flamelink/sdk-app" "^1.0.0-alpha.7"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.2"
@@ -3118,8 +3099,8 @@ gcp-metadata@^1.0.0:
     json-bigint "^0.3.0"
 
 gcs-resumable-upload@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/gcs-resumable-upload/-/gcs-resumable-upload-1.0.0.tgz#cb50b5d4151aa698897a6a555db52af9df7c90f4"
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/gcs-resumable-upload/-/gcs-resumable-upload-1.1.0.tgz#2b06f5876dcf60f18a309343f79ed951aff01399"
   dependencies:
     abort-controller "^2.0.2"
     configstore "^4.0.0"
@@ -3205,8 +3186,8 @@ globby@^6.1.0:
     pinkie-promise "^2.0.0"
 
 google-auth-library@^3.0.0:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/google-auth-library/-/google-auth-library-3.1.1.tgz#dcc69f40985879e1a42917e76fa11afb47ba4eac"
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/google-auth-library/-/google-auth-library-3.1.2.tgz#ff2f88cd5cd2118a57bd3d5ad3c093c8837fc350"
   dependencies:
     base64-js "^1.3.0"
     fast-text-encoding "^1.0.0"
@@ -3441,8 +3422,8 @@ iconv-lite@^0.4.24, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
     safer-buffer ">= 2.1.2 < 3"
 
 ieee754@^1.1.4:
-  version "1.1.12"
-  resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.1.12.tgz#50bf24e5b9c8bb98af4964c941cdb0918da7b60b"
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.1.13.tgz#ec168558e95aa181fd87d37f55c32bbcb6708b84"
 
 iferr@^0.1.5:
   version "0.1.5"
@@ -3640,8 +3621,8 @@ is-glob@^3.1.0:
     is-extglob "^2.1.0"
 
 is-glob@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/is-glob/-/is-glob-4.0.0.tgz#9521c76845cc2610a85203ddf080a958c2ffabc0"
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/is-glob/-/is-glob-4.0.1.tgz#7567dbe9f2f5e2467bc77ab83c4a29482407a5dc"
   dependencies:
     is-extglob "^2.1.1"
 
@@ -5152,13 +5133,13 @@ rc@^1.2.7:
     strip-json-comments "~2.0.1"
 
 react-dom@^16.8.4:
-  version "16.8.5"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.8.5.tgz#b3e37d152b49e07faaa8de41fdf562be3463335e"
+  version "16.8.6"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.8.6.tgz#71d6303f631e8b0097f56165ef608f051ff6e10f"
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-    scheduler "^0.13.5"
+    scheduler "^0.13.6"
 
 react-error-overlay@4.0.0:
   version "4.0.0"
@@ -5177,8 +5158,8 @@ react-is@16.6.3:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.6.3.tgz#d2d7462fcfcbe6ec0da56ad69047e47e56e7eac0"
 
 react-is@^16.3.2, react-is@^16.6.3, react-is@^16.7.0, react-is@^16.8.1:
-  version "16.8.5"
-  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.5.tgz#c54ac229dd66b5afe0de5acbe47647c3da692ff8"
+  version "16.8.6"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
 
 react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
@@ -5194,8 +5175,8 @@ react-move@^5.0.0:
     react-lifecycles-compat "^3.0.4"
 
 react-transition-group@^2.2.1:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.7.0.tgz#60ca3bb2bf83fe71c50816a936e985ce7b8134dc"
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.7.1.tgz#1fe6d54e811e8f9dfd329aa836b39d9cd16587cb"
   dependencies:
     dom-helpers "^3.3.1"
     loose-envify "^1.4.0"
@@ -5203,13 +5184,13 @@ react-transition-group@^2.2.1:
     react-lifecycles-compat "^3.0.4"
 
 react@^16.8.4:
-  version "16.8.5"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.8.5.tgz#49be3b655489d74504ad994016407e8a0445de66"
+  version "16.8.6"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.8.6.tgz#ad6c3a9614fd3a4e9ef51117f54d888da01f2bbe"
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-    scheduler "^0.13.5"
+    scheduler "^0.13.6"
 
 read-pkg@^2.0.0:
   version "2.0.0"
@@ -5471,9 +5452,9 @@ sax@^1.2.4, sax@~1.2.1:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
-scheduler@^0.13.5:
-  version "0.13.5"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.13.5.tgz#b7226625167041298af3b98088a9dbbf6d7733a8"
+scheduler@^0.13.6:
+  version "0.13.6"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.13.6.tgz#466a4ec332467b31a91b9bf74e5347072e4cd889"
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
@@ -5506,8 +5487,8 @@ semver-compare@^1.0.0:
   resolved "https://registry.yarnpkg.com/semver-compare/-/semver-compare-1.0.0.tgz#0dee216a1c941ab37e9efb1788f6afc5ff5537fc"
 
 "semver@2 || 3 || 4 || 5", semver@^5.3.0, semver@^5.4.1, semver@^5.5.0, semver@^5.5.1, semver@^5.6.0:
-  version "5.6.0"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-5.6.0.tgz#7e74256fbaa49c75aa7c7a205cc22799cac80004"
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.0.tgz#790a7cf6fea5459bac96110b29b60412dc8ff96b"
 
 send@0.16.1:
   version "0.16.1"
