@@ -6,7 +6,6 @@ import NextSeo, { SocialProfileJsonLd } from 'next-seo'
 import { flamelinkApp as app } from '../../utils/flamelink'
 
 const Profile = props => {
-  console.log(props)
   const [error, setError] = useState(null)
   const [updatedUser, setUser] = useState(null)
 
