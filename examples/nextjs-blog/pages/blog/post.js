@@ -27,6 +27,7 @@ const Post = props => {
       filters: [['slug', '==', slug]],
       fields: Post.fields,
       populate: Post.populate,
+      size: Post.imageOption,
       callback: (err, response) => {
         if (err) {
           setPost(null)
@@ -186,6 +187,10 @@ Post.fields = [
   'tags',
 ]
 
+Post.imageOption = {
+  width: 1080,
+}
+
 Post.propTypes = {
   post: PropTypes.shape({
     title: PropTypes.string.isRequired,
@@ -209,6 +214,7 @@ Post.getInitialProps = async function({ query }) {
       value: query.slug,
       fields: Post.fields,
       populate: Post.populate,
+      size: Post.imageOption,
     })) || {}
   )
 
