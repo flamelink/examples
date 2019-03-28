@@ -26,6 +26,7 @@ class Post extends PureComponent {
       filters: [['slug', '==', slug]],
       fields: Post.fields,
       populate: Post.populate,
+      size: Post.imageOption,
       callback: (error, response) => {
         if (error) {
           throw new Error(
@@ -128,7 +129,12 @@ Post.populate = [
     field: 'author',
     fields: ['displayName'],
   },
+  'image',
 ]
+
+Post.imageOption = {
+  width: 1080,
+}
 
 Post.fields = ['title', 'date', 'content', 'author', 'image', 'status']
 
@@ -153,6 +159,7 @@ Post.getInitialProps = async function({ query }) {
       value: query.slug,
       fields: Post.fields,
       populate: Post.populate,
+      size: Post.imageOption,
     })) || {}
   )
 
