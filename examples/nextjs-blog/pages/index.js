@@ -20,6 +20,7 @@ class Home extends PureComponent {
     super(props)
     this.state = {
       posts: null,
+      home: null,
     }
     this._postsSubscription = null
     this._homeSubscription = null
@@ -37,6 +38,19 @@ class Home extends PureComponent {
       const posts = Object.values(response || {})
 
       this.setState({ posts })
+    })
+
+    this._homeSubscription = Home.getHomeData(true, (error, response) => {
+      if (error) {
+        throw new Error(
+          'Something went wrong while retrieving home data. Details:',
+          error
+        )
+      }
+
+      const [home] = Object.values(response || {})
+
+      this.setState({ home })
     })
   }
 
@@ -117,7 +131,7 @@ class Home extends PureComponent {
 
   render() {
     const { posts, home } = this.props
-    let { posts: updatedPosts } = this.state
+    let { posts: updatedPosts, home: updatedHome } = this.state
 
     if (!posts && !updatedPosts) {
       return <h4>No posts yet :(</h4>
@@ -125,8 +139,12 @@ class Home extends PureComponent {
 
     return (
       <div className={containerWide.className}>
-        <Markdown>{home.content}</Markdown>
-        {this.renderSuggestedPostSlider(home.suggestedPost)}
+        <Markdown>
+          {(updatedHome && updatedHome.content) || home.content}
+        </Markdown>
+        {this.renderSuggestedPostSlider(
+          (updatedHome && updatedHome.suggestedPost) || home.suggestedPost
+        )}
         <h2>Latest Posts</h2>
         <Grid
           container
@@ -220,13 +238,19 @@ Home.getPostData = async function(subscribe = false, cb = function() {}) {
   )
 }
 
-Home.getHomeData = function() {
-  return app.content.get({
+Home.getHomeData = function(subscribe = false, cb = function() {}) {
+  const options = {
     schemaKey: 'home',
     populate: Home.populate.home,
     size: Home.sizes.posts,
     fields: Home.fields.home,
-  })
+  }
+
+  if (subscribe) {
+    Object.assign(options, { callback: cb })
+  }
+
+  return app.content[subscribe ? 'subscribe' : 'get'](options)
 }
 
 Home.getInitialProps = async () => {
