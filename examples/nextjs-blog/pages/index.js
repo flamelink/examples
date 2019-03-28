@@ -1,5 +1,6 @@
 import React from 'react'
 import Carousel from 'nuka-carousel'
+import Markdown from 'markdown-to-jsx'
 import PropTypes from 'prop-types'
 import {
   Grid,
@@ -93,7 +94,7 @@ const Home = function(props) {
 
   return (
     <div className={containerWide.className}>
-      <h1>{home.content}</h1>
+      <Markdown>{home.content}</Markdown>
       {renderSuggestedPostSlider(home.suggestedPost)}
       <h2>Latest Posts</h2>
       <Grid container justify="flex-start" spacing={32} className="pageSection">
@@ -155,6 +156,7 @@ Home.getInitialProps = async () => {
       limit: 3,
       populate: Home.populate,
       fields: Home.fields,
+      size: { width: 667 },
     })) || {}
   )
 
@@ -173,6 +175,7 @@ Home.getInitialProps = async () => {
         ],
       },
     ],
+    size: { width: 900 },
     fields: ['content', 'suggestedPost'],
   })
 
