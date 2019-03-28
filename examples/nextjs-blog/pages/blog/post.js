@@ -116,10 +116,10 @@ const Post = props => {
         </div>
         <NextSeo
           config={{
-            title: seo.ogTitle || seo.metaTitle || title,
+            title: `${seo.ogTitle || seo.metaTitle || title} | Post`,
             description: seo.metaDescription,
             openGraph: {
-              title: seo.ogTitle || seo.metaTitle || title,
+              title: `${seo.ogTitle || seo.metaTitle || title} | Post`,
               description: seo.ogDescription || seo.metaDescription,
               url:
                 seo.ogUrl || seo.canonicalUrl || typeof window !== 'undefined'
