@@ -27,6 +27,7 @@
     "next": "^8.0.3",
     "next-routes": "^1.4.2",
     "next-seo": "^1.11.1",
+    "nuka-carousel": "^4.5.3",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
