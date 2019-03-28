@@ -16,11 +16,11 @@ class MyApp extends App {
       pageProps = await Component.getInitialProps(ctx)
     }
 
-    return { pageProps, globalSettings }
+    return { pageProps, globalSettings, params: ctx.query }
   }
 
   render() {
-    const { Component, pageProps, globalSettings } = this.props
+    const { Component, pageProps, globalSettings, params } = this.props
 
     return (
       <Container>
@@ -34,7 +34,7 @@ class MyApp extends App {
         />
         <Header />
         <main>
-          <Component globals={globalSettings} {...pageProps} />
+          <Component params={params} globals={globalSettings} {...pageProps} />
         </main>
         <Footer />
       </Container>

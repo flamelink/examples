@@ -6,12 +6,12 @@ import NextSeo, { SocialProfileJsonLd } from 'next-seo'
 import { flamelinkApp as app } from '../../utils/flamelink'
 
 const Profile = props => {
+  console.log(props)
   const [error, setError] = useState(null)
   const [updatedUser, setUser] = useState(null)
 
   useEffect(() => {
-    const { pathname } = location
-    const id = pathname.split('/').pop()
+    const { id } = props.params
 
     return app.users.subscribe({
       uid: id,
@@ -26,7 +26,7 @@ const Profile = props => {
         return setUser(response)
       },
     })
-  }, [])
+  }, [props.params])
 
   const { user } = props
 
@@ -88,6 +88,7 @@ Profile.propTypes = {
     lastName: PropTypes.string.isRequired,
     permissions: PropTypes.object.isRequired,
   }).isRequired,
+  params: PropTypes.shape({ id: PropTypes.string.isRequired }).isRequired,
 }
 
 Profile.getInitialProps = async ({ query }) => {
