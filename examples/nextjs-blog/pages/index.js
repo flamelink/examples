@@ -196,9 +196,6 @@ Home.sizes = {
   home: { width: 900 },
 }
 
-// firestore will not subscribe to a query but instead documents that match the
-// original query, to achieve a real-time list of latest posts, we use
-// app.content.get in an interval
 Home.getPostData = async function(subscribe = false, cb = function() {}) {
   const options = {
     schemaKey: 'blogPost',
