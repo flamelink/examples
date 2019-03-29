@@ -1,66 +1,80 @@
-import React, { PureComponent } from 'react'
-import { flamelinkApp as app } from '../../utils/flamelink'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
+import NextError from 'next/error'
+import get from 'lodash/get'
+import NextSeo, { SocialProfileJsonLd } from 'next-seo'
+import { flamelinkApp as app } from '../../utils/flamelink'
 
-class Profile extends PureComponent {
-  constructor(props) {
-    super(props)
-    this.state = {
-      user: null,
-    }
-  }
+const Profile = props => {
+  const [error, setError] = useState(null)
+  const [updatedUser, setUser] = useState(null)
 
-  async componentDidMount() {
-    const { pathname } = location
-    const id = pathname.split('/').pop()
+  useEffect(() => {
+    const { id } = props.params
 
-    this._subscription = app.users.subscribe({
+    return app.users.subscribe({
       uid: id,
-      callback: (error, response) => {
-        if (error) {
-          throw new Error(
-            'Something went wrong while retrieving user. Details:',
-            error
-          )
+      populate: true,
+      callback: (err, response) => {
+        if (err) {
+          setUser(null)
+          return setError(err)
         }
 
-        this.setState({ user: response })
+        setError(null)
+        return setUser(response)
       },
     })
+  }, [props.params])
+
+  const { user } = props
+
+  if (error || (!user && !updatedUser)) {
+    return <NextError statusCode={get(error, 'code', 404)} />
   }
 
-  componentWillUnmount() {
-    this._subscription && this._subscription()
-  }
+  const { displayName, firstName, lastName, email, enabled, id, avatar } =
+    updatedUser || user
 
-  render() {
-    const { user } = this.props
-    const { user: updatedUser } = this.state
-
-    if (!user || !updatedUser) {
-      return 'No user data'
-    }
-
-    const { displayName, email, enabled, id } = updatedUser || user
-
-    return (
+  return (
+    <>
       <div>
         <h1>{displayName}</h1>
         <h2>{email}</h2>
         <h4>{`Enabled: ${enabled}`}</h4>
         <h4>{id}</h4>
       </div>
-    )
-  }
-}
-
-Profile.getInitialProps = async ({ query }) => {
-  const { id } = query
-  const user = await app.users.get({ uid: id })
-
-  return {
-    user,
-  }
+      <NextSeo
+        config={{
+          title: `${displayName} | Author`,
+          description: `Blog profile for ${displayName}`,
+          openGraph: {
+            title: `${displayName} | Author`,
+            description: `Blog profile for ${displayName}`,
+            url: typeof window !== 'undefined' ? window.location.href : '',
+            type: 'profile',
+            profile: {
+              firstName,
+              lastName,
+              username: email,
+            },
+            images: [
+              {
+                url: get(avatar, `[0].url`, ''),
+                alt: `Profile Photo of ${displayName}`,
+              },
+            ],
+          },
+        }}
+      />
+      <SocialProfileJsonLd
+        type="Person"
+        name={displayName}
+        url={typeof window !== 'undefined' ? window.location.href : ''}
+        sameAs={[]}
+      />
+    </>
+  )
 }
 
 Profile.propTypes = {
@@ -73,6 +87,15 @@ Profile.propTypes = {
     lastName: PropTypes.string.isRequired,
     permissions: PropTypes.object.isRequired,
   }).isRequired,
+  params: PropTypes.shape({ id: PropTypes.string.isRequired }).isRequired,
+}
+
+Profile.getInitialProps = async ({ query }) => {
+  const user = await app.users.get({ uid: query.id, populate: true })
+
+  return {
+    user,
+  }
 }
 
 export default Profile

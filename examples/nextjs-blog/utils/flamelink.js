@@ -10,6 +10,7 @@ import 'flamelink/navigation'
 import 'flamelink/users'
 
 let firebaseApp
+let firestore
 
 if (process.browser) {
   firebaseApp = firebase.apps.length
@@ -23,9 +24,10 @@ if (process.browser) {
         messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
       })
 
+  firestore = firebase.firestore
+
   // The example uses Cloud Firestore, so let's enable offline persistence to improve performance
-  firebaseApp
-    .firestore()
+  firestore()
     .enablePersistence()
     .catch(console.error)
 } else {
@@ -43,7 +45,11 @@ if (process.browser) {
         storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
         databaseURL: process.env.FIREBASE_DATABASE_URL,
       })
+
+  firestore = admin.firestore
 }
+
+export const firestoreService = firestore
 
 export const flamelinkApp = flamelink({
   firebaseApp,
