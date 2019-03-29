@@ -18,8 +18,7 @@ const Post = props => {
   const [updatedPost, setPost] = useState(null)
 
   useEffect(() => {
-    const { pathname } = location
-    const slug = pathname.split('/').pop()
+    const { slug } = props.params
 
     return app.content.subscribe({
       schemaKey: 'blogPost',
@@ -40,7 +39,7 @@ const Post = props => {
         return setPost[content]
       },
     })
-  }, [])
+  }, [props.params])
 
   const { post } = props
 
@@ -204,6 +203,7 @@ Post.propTypes = {
     image: PropTypes.array.isRequired,
     seo: PropTypes.object.isRequired,
   }),
+  params: PropTypes.shape({ slug: PropTypes.string.isRequired }).isRequired,
 }
 
 Post.getInitialProps = async function({ query }) {
