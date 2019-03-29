@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import Carousel from 'nuka-carousel'
+import Markdown from 'markdown-to-jsx'
 import PropTypes from 'prop-types'
 import {
   Grid,
@@ -14,8 +15,54 @@ import { getImageAlt, getDateString } from '../utils/post/post.util'
 import { DEFAULT_POST_IMAGE_URL } from '../constants/constants'
 import { containerWide } from '../components/styled'
 
-const Home = function(props) {
-  function renderPostCards(posts) {
+class Home extends PureComponent {
+  constructor(props) {
+    super(props)
+    this.state = {
+      posts: null,
+      home: null,
+    }
+    this._postsSubscription = null
+    this._homeSubscription = null
+  }
+
+  async componentDidMount() {
+    this._postsSubscription = await Home.getPostData(
+      true,
+      (error, response) => {
+        if (error) {
+          throw new Error(
+            'Something went wrong while retrieving posts. Details:',
+            error
+          )
+        }
+
+        const posts = Object.values(response || {})
+
+        this.setState({ posts })
+      }
+    )
+
+    this._homeSubscription = Home.getHomeData(true, (error, response) => {
+      if (error) {
+        throw new Error(
+          'Something went wrong while retrieving home data. Details:',
+          error
+        )
+      }
+
+      const [home] = Object.values(response || {})
+
+      this.setState({ home })
+    })
+  }
+
+  componentWillUnmount() {
+    this._postsSubscription && this._postsSubscription()
+    this._homeSubscription && this._homeSubscription()
+  }
+
+  renderPostCards(posts) {
     return posts.map(post => {
       const {
         title,
@@ -61,7 +108,7 @@ const Home = function(props) {
     })
   }
 
-  function renderSuggestedPostSlider(suggestedPosts) {
+  renderSuggestedPostSlider(suggestedPosts) {
     return (
       <Carousel
         cellAlign="left"
@@ -85,55 +132,54 @@ const Home = function(props) {
     )
   }
 
-  const { posts, home } = props
+  render() {
+    const { posts, home } = this.props
+    let { posts: updatedPosts, home: updatedHome } = this.state
 
-  if (!posts) {
-    return <h4>No posts yet :(</h4>
+    if (!posts && !updatedPosts) {
+      return <h4>No posts yet :(</h4>
+    }
+
+    return (
+      <div className={containerWide.className}>
+        <Markdown>
+          {(updatedHome && updatedHome.content) || home.content}
+        </Markdown>
+        {this.renderSuggestedPostSlider(
+          (updatedHome && updatedHome.suggestedPost) || home.suggestedPost
+        )}
+        <h2>Latest Posts</h2>
+        <Grid
+          container
+          justify="flex-start"
+          spacing={32}
+          className="pageSection"
+        >
+          {this.renderPostCards(updatedPosts || posts)}
+        </Grid>
+        <style jsx>{`
+          :global(.media) {
+            height: 11.43rem;
+          }
+
+          :global(.card) {
+            height: 100%;
+          }
+
+          :global(.pageSection) {
+            margin-bottom: 4.28rem;
+          }
+        `}</style>
+        <style jsx>{containerWide}</style>
+      </div>
+    )
   }
-
-  return (
-    <div className={containerWide.className}>
-      <h1>{home.content}</h1>
-      {renderSuggestedPostSlider(home.suggestedPost)}
-      <h2>Latest Posts</h2>
-      <Grid container justify="flex-start" spacing={32} className="pageSection">
-        {renderPostCards(posts)}
-      </Grid>
-      <style jsx>{`
-        :global(.media) {
-          height: 11.43rem;
-        }
-
-        :global(.card) {
-          height: 100%;
-        }
-
-        :global(.pageSection) {
-          margin-bottom: 4.28rem;
-        }
-      `}</style>
-      <style jsx>{containerWide}</style>
-    </div>
-  )
 }
 
-Home.fields = [
-  'title',
-  'slug',
-  'author',
-  'image',
-  'date',
-  '_fl_meta_',
-  'suggested',
-]
-
-Home.populate = [
-  {
-    field: 'author',
-    fields: ['displayName'],
-  },
-  'image',
-]
+Home.fields = {
+  posts: ['title', 'slug', 'author', 'image', 'date', '_fl_meta_', 'suggested'],
+  home: ['content', 'suggestedPost'],
+}
 
 Home.propTypes = {
   posts: PropTypes.array.isRequired,
@@ -143,42 +189,78 @@ Home.propTypes = {
   }).isRequired,
 }
 
-Home.getInitialProps = async () => {
-  const posts = Object.values(
-    (await app.content.get({
-      schemaKey: 'blogPost',
-      filters: [['status', '==', 'published']],
-      orderBy: {
-        field: 'date',
-        order: 'asc',
-      },
-      limit: 3,
-      populate: Home.populate,
-      fields: Home.fields,
-    })) || {}
-  )
+Home.populate = {
+  posts: [
+    {
+      field: 'author',
+      fields: ['displayName'],
+    },
+    'image',
+  ],
+  home: [
+    {
+      field: 'suggestedPost',
+      subFields: [
+        {
+          field: 'post',
+          // if you wanted to get the nested image from the related post
+          // populate: ['image']
+        },
+        'image',
+      ],
+    },
+  ],
+}
 
-  const home = await app.content.get({
+Home.sizes = {
+  posts: { width: 667 },
+  home: { width: 900 },
+}
+
+Home.getPostData = async function(subscribe = false, cb = function() {}) {
+  const options = {
+    schemaKey: 'blogPost',
+    filters: [['status', '==', 'published']],
+    orderBy: {
+      field: 'date',
+      order: 'asc',
+    },
+    limit: 3,
+    populate: Home.populate.posts,
+    fields: Home.fields.posts,
+    size: Home.sizes.posts,
+  }
+
+  if (subscribe) {
+    Object.assign(options, { callback: cb })
+
+    return app.content.subscribe(options)
+  }
+
+  return Object.values((await app.content.get(options)) || {})
+}
+
+Home.getHomeData = function(subscribe = false, cb = function() {}) {
+  const options = {
     schemaKey: 'home',
-    populate: [
-      {
-        field: 'suggestedPost',
-        subFields: [
-          {
-            field: 'post',
-            // if you wanted to get the nested image from the related post
-            // populate: ['image']
-          },
-          'image',
-        ],
-      },
-    ],
-    fields: ['content', 'suggestedPost'],
-  })
+    populate: Home.populate.home,
+    size: Home.sizes.posts,
+    fields: Home.fields.home,
+  }
 
+  if (subscribe) {
+    Object.assign(options, { callback: cb })
+
+    return app.content.subscribe(options)
+  }
+
+  return app.content.get(options)
+}
+
+Home.getInitialProps = async () => {
   return {
-    posts,
-    home,
+    posts: await Home.getPostData(),
+    home: await Home.getHomeData(),
   }
 }
 
