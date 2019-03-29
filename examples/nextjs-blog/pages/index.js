@@ -26,19 +26,22 @@ class Home extends PureComponent {
     this._homeSubscription = null
   }
 
-  componentDidMount() {
-    this._postsSubscription = Home.getPostData(true, (error, response) => {
-      if (error) {
-        throw new Error(
-          'Something went wrong while retrieving posts. Details:',
-          error
-        )
+  async componentDidMount() {
+    this._postsSubscription = await Home.getPostData(
+      true,
+      (error, response) => {
+        if (error) {
+          throw new Error(
+            'Something went wrong while retrieving posts. Details:',
+            error
+          )
+        }
+
+        const posts = Object.values(response || {})
+
+        this.setState({ posts })
       }
-
-      const posts = Object.values(response || {})
-
-      this.setState({ posts })
-    })
+    )
 
     this._homeSubscription = Home.getHomeData(true, (error, response) => {
       if (error) {
@@ -229,13 +232,12 @@ Home.getPostData = async function(subscribe = false, cb = function() {}) {
   }
 
   if (subscribe) {
-    // Object.assign(options, { changeType: 'modified', callback: cb })
     Object.assign(options, { callback: cb })
+
+    return app.content.subscribe(options)
   }
 
-  return Object.values(
-    (await app.content[subscribe ? 'subscribe' : 'get'](options)) || {}
-  )
+  return Object.values((await app.content.get(options)) || {})
 }
 
 Home.getHomeData = function(subscribe = false, cb = function() {}) {
@@ -248,9 +250,11 @@ Home.getHomeData = function(subscribe = false, cb = function() {}) {
 
   if (subscribe) {
     Object.assign(options, { callback: cb })
+
+    return app.content.subscribe(options)
   }
 
-  return app.content[subscribe ? 'subscribe' : 'get'](options)
+  return app.content.get(options)
 }
 
 Home.getInitialProps = async () => {
