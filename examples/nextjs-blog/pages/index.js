@@ -1,29 +1,18 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent, Fragment } from 'react'
+import PropTypes from 'prop-types'
 import Carousel from 'nuka-carousel'
 import Markdown from 'markdown-to-jsx'
-import PropTypes from 'prop-types'
-import {
-  Grid,
-  Card,
-  CardActions,
-  CardMedia,
-  CardContent,
-} from '@material-ui/core'
+import get from 'lodash/get'
 import { flamelinkApp as app } from '../utils/flamelink'
 import { Link } from '../routes'
-import { getImageAlt, getDateString } from '../utils/post/post.util'
-import { DEFAULT_POST_IMAGE_URL } from '../constants/constants'
 import { containerWide } from '../components/styled'
+import Slider from '../components/slider'
+import BlogPostsGrid from '../components/blog-posts-grid'
 
 class Home extends PureComponent {
-  constructor(props) {
-    super(props)
-    this.state = {
-      posts: null,
-      home: null,
-    }
-    this._postsSubscription = null
-    this._homeSubscription = null
+  state = {
+    posts: null,
+    home: null,
   }
 
   async componentDidMount() {
@@ -62,58 +51,12 @@ class Home extends PureComponent {
     this._homeSubscription && this._homeSubscription()
   }
 
-  renderPostCards(posts) {
-    return posts.map(post => {
-      const {
-        title,
-        slug,
-        author: { displayName },
-        excerpt,
-        _fl_meta_: { docId },
-        image,
-        date,
-      } = post
-
-      const { url } = (image && image[0]) || {
-        url: DEFAULT_POST_IMAGE_URL,
-      }
-
-      return (
-        <Grid key={docId} item xs={12} md={6} lg={4} xl={3}>
-          <Card className="card">
-            <CardMedia
-              className="media"
-              image={url}
-              title={getImageAlt(post)}
-            />
-            <CardContent>
-              <p>{getDateString(date)}</p>
-              <p>{displayName}</p>
-              <Link route={`/blog/${slug}`}>
-                {/* href gets added to <a> by <Link> */}
-                <a>
-                  <h4>{title}</h4>
-                </a>
-              </Link>
-              <p>{excerpt}</p>
-            </CardContent>
-            <CardActions>
-              <Link route={`/blog/${slug}`}>
-                <a className="readPost">Read Article</a>
-              </Link>
-            </CardActions>
-          </Card>
-        </Grid>
-      )
-    })
-  }
-
   renderSuggestedPostSlider(suggestedPosts) {
     return (
       <Carousel
-        cellAlign="left"
+        cellAlign="center"
         heightMode="max"
-        wrapAround={false}
+        wrapAround={true}
         slidesToScroll={1}
       >
         {suggestedPosts.map(suggestedPost => {
@@ -136,42 +79,41 @@ class Home extends PureComponent {
     const { posts, home } = this.props
     let { posts: updatedPosts, home: updatedHome } = this.state
 
-    if (!posts && !updatedPosts) {
-      return <h4>No posts yet :(</h4>
-    }
+    const hasPosts = posts || updatedPosts
+
+    const sliderItems = get(
+      updatedHome,
+      'suggestedPost',
+      get(home, 'suggestedPost'),
+      []
+    ).map(suggestedPost => {
+      const { image, post } = suggestedPost
+      const { slug, title } = post[0]
+
+      return {
+        key: slug,
+        link: `/blog/${slug}`,
+        title,
+        url: get(image, `[0].url`, ''),
+      }
+    })
 
     return (
-      <div className={containerWide.className}>
-        <Markdown>
-          {(updatedHome && updatedHome.content) || home.content}
-        </Markdown>
-        {this.renderSuggestedPostSlider(
-          (updatedHome && updatedHome.suggestedPost) || home.suggestedPost
-        )}
-        <h2>Latest Posts</h2>
-        <Grid
-          container
-          justify="flex-start"
-          spacing={32}
-          className="pageSection"
-        >
-          {this.renderPostCards(updatedPosts || posts)}
-        </Grid>
-        <style jsx>{`
-          :global(.media) {
-            height: 11.43rem;
-          }
-
-          :global(.card) {
-            height: 100%;
-          }
-
-          :global(.pageSection) {
-            margin-bottom: 4.28rem;
-          }
-        `}</style>
-        <style jsx>{containerWide}</style>
-      </div>
+      <Fragment>
+        <Slider items={sliderItems} />
+        <div className={containerWide.className}>
+          <Markdown>
+            {get(updatedHome, 'content', get(home, 'content', null))}
+          </Markdown>
+          {hasPosts && (
+            <Fragment>
+              <h2>Latest Posts</h2>
+              <BlogPostsGrid posts={updatedPosts || posts} />
+            </Fragment>
+          )}
+          <style jsx>{containerWide}</style>
+        </div>
+      </Fragment>
     )
   }
 }

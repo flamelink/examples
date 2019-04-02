@@ -4,12 +4,10 @@ import get from 'lodash/get'
 import Markdown from 'markdown-to-jsx'
 import NextError from 'next/error'
 import NextSeo, { ArticleJsonLd } from 'next-seo'
+import EventIcon from '@material-ui/icons/Event'
+import PersonIcon from '@material-ui/icons/Person'
 import { flamelinkApp as app } from '../../utils/flamelink'
-import {
-  getImageAlt,
-  getDateString,
-  getDateFromTimestamp,
-} from '../../utils/post/post.util'
+import { getDateString, getDateFromTimestamp } from '../../utils/post/post.util'
 import { DEFAULT_POST_IMAGE_URL } from '../../constants/constants'
 import { containerInner } from '../../components/styled'
 
@@ -27,7 +25,7 @@ const Post = props => {
       fields: Post.fields,
       populate: Post.populate,
       size: Post.imageOption,
-      callback: (err, response) => {
+      callback(err, response) {
         if (err) {
           setPost(null)
           return setError(err)
@@ -36,7 +34,7 @@ const Post = props => {
         const [content] = Object.values(response || {})
 
         setError(null)
-        return setPost[content]
+        return setPost(content)
       },
     })
   }, [props.params])
@@ -69,26 +67,42 @@ const Post = props => {
     return (
       <>
         <header className="banner">
-          <img src={url} alt={getImageAlt(post)} />
           <div className="post-meta">
-            <p>{`${getDateString(date)} ${displayName}`}</p>
+            <p>
+              <span>
+                <EventIcon fontSize="small" />
+                {getDateString(date)}
+              </span>
+              <span>
+                <PersonIcon />
+                {displayName}
+              </span>
+            </p>
             <h1>{title}</h1>
           </div>
         </header>
-        <div className={containerInner.className}>
+        <div className={[containerInner.className, `pageSection`].join(' ')}>
           <Markdown>{content}</Markdown>
           <style jsx>{`
             :global(.pageSection) {
               margin-bottom: 4.28rem;
             }
 
+            :global(.pageSection img) {
+              margin: 2.3rem auto;
+              width: 100%;
+              max-width: 100%;
+            }
+
             :global(.banner) {
               width: 100%;
               position: relative;
-            }
-
-            :global(.banner > img) {
-              width: 100%;
+              height: 30rem;
+              overflow: hidden;
+              background-image: url(${url});
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
             }
 
             :global(.post-meta) {
@@ -102,14 +116,27 @@ const Post = props => {
               justify-content: center;
               align-items: center;
               color: #fff;
-            }
-
-            :global(.post-meta > h1) {
-              text-shadow: 0px 0px 10px var(--text-color);
+              background-color: rgba(0, 0, 0, 0.4);
             }
 
             :global(.post-meta > p) {
-              text-shadow: 0px 0px 10px var(--text-color);
+              font-size: 1rem;
+              line-height: 0.9;
+              display: flex;
+            }
+
+            :global(.post-meta > p svg) {
+              margin-right: 0.45rem;
+            }
+
+            :global(.post-meta > p span) {
+              margin-right: 1.4rem;
+              display: flex;
+              align-items: center;
+            }
+
+            :global(.post-meta > p span:last-child) {
+              margin-right: 0;
             }
           `}</style>
           <style jsx>{containerInner}</style>

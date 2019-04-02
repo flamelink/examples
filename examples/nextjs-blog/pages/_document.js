@@ -86,7 +86,7 @@ class CustomDocument extends Document {
           />
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Nunito:300,400,500,900"
+            href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,500,700"
           />
           <style global jsx>{`
             :root {
@@ -112,7 +112,7 @@ class CustomDocument extends Document {
 
             body {
               margin: 0;
-              font-family: 'Nunito', sans-serif;
+              font-family: 'Nunito Sans', sans-serif;
               line-height: 1.57;
               color: var(--text-color);
             }
@@ -125,11 +125,12 @@ class CustomDocument extends Document {
               font-size: 3.42rem;
               font-weight: 500;
               line-height: 0.71;
+              margin: 2.12rem 0;
             }
 
             h2 {
               font-size: 2.85rem;
-              font-weight: 900;
+              font-weight: 700;
               font-style: normal;
               line-height: normal;
               letter-spacing: normal;
@@ -155,7 +156,7 @@ class CustomDocument extends Document {
             }
 
             strong {
-              font-weight: 900;
+              font-weight: 700;
             }
 
             a {
@@ -170,6 +171,13 @@ class CustomDocument extends Document {
               font-weight: 400;
               line-height: 1.14;
               padding: 1rem 0 1rem 2.6rem;
+              margin-left: 0;
+              margin-right: 0;
+            }
+
+            blockquote > p {
+              margin: 0;
+              padding: 0;
             }
 
             button,

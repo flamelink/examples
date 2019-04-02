@@ -13,5 +13,6 @@ export const containerInner = css`
     max-width: var(--container-medium);
     margin-left: auto;
     margin-right: auto;
+    padding-top: 3.28rem;
   }
 `
