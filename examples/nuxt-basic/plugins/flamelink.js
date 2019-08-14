@@ -25,7 +25,8 @@ export default ({ app }) => {
     }
   } else {
     const firebase = require('firebase/app')
-    require('firebase/auth')
+    // require('firebase/auth')
+    // require('firebase/firestore')
     require('firebase/database')
     require('firebase/storage')
 
