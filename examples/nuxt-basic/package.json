@@ -5,7 +5,7 @@
   "author": "JP Erasmus <jperasmus11@gmail.com>",
   "private": true,
   "engines": {
-    "node": ">=4 <10"
+    "node": ">=8"
   },
   "scripts": {
     "dev": "nuxt",
@@ -16,18 +16,19 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@nuxtjs/dotenv": "^1.1.1",
-    "firebase": "^4.12.1",
-    "firebase-admin": "^5.12.1",
-    "flamelink": "^0.18.10",
+    "@nuxtjs/dotenv": "^1.4.0",
+    "core-js": "^2.6.5",
+    "firebase": "^6.3.5",
+    "firebase-admin": "^8.3.0",
+    "flamelink": "^1.0.0-alpha.24",
     "lodash.get": "^4.4.2",
-    "nuxt": "^1.4.2"
+    "nuxt": "^2.8.1"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.1",
-    "eslint": "^4.15.0",
-    "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.7.1",
-    "eslint-plugin-vue": "^4.0.0"
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.1.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-vue": "^5.2.3"
   }
 }

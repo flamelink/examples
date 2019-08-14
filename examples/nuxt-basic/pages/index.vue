@@ -30,7 +30,11 @@ export default {
 
   async asyncData({ app }) {
     try {
-      const products = await app.flamelink.content.get('products', { populate: ['image'] })
+      const products = await app.flamelink.content.get({
+        schemaKey: 'products',
+        populate: true
+      })
+      console.log({ products })
       return { products }
     } catch (err) {
       console.log(err)

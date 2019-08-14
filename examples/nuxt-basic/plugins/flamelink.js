@@ -1,4 +1,10 @@
-import * as flamelink from 'flamelink'
+import flamelink from 'flamelink/app'
+// This example uses RTDB (Realtime Database) - replace with `cf` for Cloud Firestore
+import 'flamelink/rtdb/content'
+import 'flamelink/rtdb/storage'
+// import 'flamelink/rtdb/settings'
+// import 'flamelink/rtdb/navigation'
+// import 'flamelink/rtdb/users'
 
 export default ({ app }) => {
   let firebaseApp
@@ -37,5 +43,5 @@ export default ({ app }) => {
     }
   }
 
-  app.flamelink = flamelink({ firebaseApp, isAdminApp: process.server })
+  app.flamelink = flamelink({ firebaseApp, dbType: 'rtdb' })
 }
