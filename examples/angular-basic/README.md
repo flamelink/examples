@@ -1,4 +1,4 @@
-# FlamelinkBoilerplate
+# Flamelink Basic Angular Boilerplate
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
 
@@ -18,8 +18,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Update details in `src/app/app.firebase.config.ts` to point to your Firebase Project that has already been added to Flamelink, with some schemas created.
 
-## Flamelink Data 
+## Flamelink Data
 
-For getting content from Flamelink using the SDK, please refer to the SDK documentation `https://flamelink.github.io/flamelink/#/`
+For getting content from Flamelink using the SDK, please refer to the SDK documentation `https://flamelink.github.io/flamelink-js-sdk`
 Sample implementation can be seen in the Home Component at `src/app/templates/home/home.component.ts`
-
