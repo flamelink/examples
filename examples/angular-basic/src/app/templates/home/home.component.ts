@@ -14,20 +14,27 @@ export class HomeComponent implements OnInit {
   constructor(private _fl: FlamelinkService) { }
 
   ngOnInit() {
-    this._fl.getApp().content.subscribe('schemaDemo', { populate: ['banner']}, (error, data) => {
-      if (error) {
-        console.error(error);
-      }
+    this._fl.getApp().content.subscribe({
+      schemaKey: 'schemaDemo',
+      populate: ['banner'],
+      callback: (error, data) => {
+        if (error) {
+          return console.error(error);
+        }
 
-      this.content = data;
+        this.content = data;
+      }
     });
 
-    this._fl.getApp().content.subscribe('collectionDemo', (error, data) => {
-      if (error) {
-        console.error(error);
-      }
+    this._fl.getApp().content.subscribe({
+      schemaKey: 'collectionDemo',
+      callback: (error, data) => {
+        if (error) {
+          return console.error(error);
+        }
 
-      this.posts = Object.keys(data).map(key => data[ key ]);
+        this.posts = Object.values(data);
+      }
     });
   }
 }
