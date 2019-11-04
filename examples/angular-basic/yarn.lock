@@ -601,10 +601,10 @@
   dependencies:
     "@flamelink/sdk-app-types" "^1.0.0-alpha.25"
 
-"@flamelink/sdk-storage-cf@^1.0.0-alpha.25":
-  version "1.0.0-alpha.25"
-  resolved "https://registry.yarnpkg.com/@flamelink/sdk-storage-cf/-/sdk-storage-cf-1.0.0-alpha.25.tgz#39049dbdd415803d29cb876f09d07deb976b45df"
-  integrity sha512-Q6hL1Lb2N8sGZ+14oC8yscq2xVy514FAxEriYahTFZaloI4FRFtT6owvd0GaSafLjfjkMBeoAYQpV56Izvkepg==
+"@flamelink/sdk-storage-cf@^1.0.0-alpha.26":
+  version "1.0.0-alpha.26"
+  resolved "https://registry.yarnpkg.com/@flamelink/sdk-storage-cf/-/sdk-storage-cf-1.0.0-alpha.26.tgz#bfa3d81e4a7b411221c3357e02989faf81e7691e"
+  integrity sha512-zgpHy9DOaUz8OF8nhJ4eZDkqrN+j3MBm1vq/tgnjXQ0gKGglQ3eVxPjvrkhEfnOSCZMt8GXcU3fvMZmX48T0Sw==
   dependencies:
     "@firebase/storage-types" "^0.3.3"
     "@flamelink/sdk-app" "^1.0.0-alpha.25"
@@ -3038,10 +3038,10 @@ firebase@^6.4.0:
     "@firebase/storage" "0.3.9"
     "@firebase/util" "0.2.25"
 
-flamelink@^1.0.0-alpha.25:
-  version "1.0.0-alpha.25"
-  resolved "https://registry.yarnpkg.com/flamelink/-/flamelink-1.0.0-alpha.25.tgz#d7eb97401c972dd30ad5f3c5a1057cb920ed1c30"
-  integrity sha512-gNv8TJnIJbuan+LyLGnlGTUy3MOGOePUCZNJ1NveFM9iu2oWodbGc2IyFyEeYgbY1jmCP6h+g94gQ9pk5NBC3w==
+flamelink@^1.0.0-alpha.26:
+  version "1.0.0-alpha.26"
+  resolved "https://registry.yarnpkg.com/flamelink/-/flamelink-1.0.0-alpha.26.tgz#47c831fa781aa6843388061e8487feddcf6c3f45"
+  integrity sha512-NwExOiXEZT+APhn/g9Z3kqC/7kOT/9mz26dJPp/o4Eq7DzQyTThyCtgaoCl3wpVL7ijAznFkt1OhyN1PfPBprg==
   dependencies:
     "@flamelink/sdk-app" "^1.0.0-alpha.25"
     "@flamelink/sdk-app-types" "^1.0.0-alpha.25"
@@ -3053,7 +3053,7 @@ flamelink@^1.0.0-alpha.25:
     "@flamelink/sdk-schemas-rtdb" "^1.0.0-alpha.25"
     "@flamelink/sdk-settings-cf" "^1.0.0-alpha.25"
     "@flamelink/sdk-settings-rtdb" "^1.0.0-alpha.25"
-    "@flamelink/sdk-storage-cf" "^1.0.0-alpha.25"
+    "@flamelink/sdk-storage-cf" "^1.0.0-alpha.26"
     "@flamelink/sdk-storage-rtdb" "^1.0.0-alpha.25"
     "@flamelink/sdk-users-cf" "^1.0.0-alpha.25"
     "@flamelink/sdk-users-rtdb" "^1.0.0-alpha.25"
