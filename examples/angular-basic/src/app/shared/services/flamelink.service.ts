@@ -1,13 +1,17 @@
 import { Injectable, Inject } from '@angular/core';
 import * as firebase from 'firebase/app';
-import 'firebase/database'
-import 'firebase/storage'
-import 'firebase/auth'
+// import 'firebase/database' if you're using Realtime Database
+import 'firebase/firestore';
+import 'firebase/storage';
+import 'firebase/auth';
 import { FirebaseApp } from '@angular/fire';
 import flamelink from 'flamelink/app';
-import 'flamelink/rtdb/content'
-import 'flamelink/rtdb/navigation'
-import 'flamelink/rtdb/storage'
+// Import all Flamelink modules you're going to use (replace `cf` with `rtdb` if using the Realtime Database)
+import 'flamelink/cf/settings';
+import 'flamelink/cf/content';
+import 'flamelink/cf/navigation';
+import 'flamelink/cf/storage';
+import 'flamelink/cf/users';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +34,7 @@ export class FlamelinkService {
       firebaseApp: this._fb,
       env: 'production',
       locale: 'en-US',
-      dbType: 'rtdb' // dbType should match the imports (rtdb or cf)
+      dbType: 'cf' // dbType should match the imports (rtdb or cf)
     });
   }
 
