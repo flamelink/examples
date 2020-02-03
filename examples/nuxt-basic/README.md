@@ -34,6 +34,21 @@ You can read more about creating the service account JSON file and setting up th
 
 > Important! Node v10 is currently NOT supported
 
+### (optional) Configure Firestore DB
+
+_You could skip this step if you your Realtime Database._
+
+If you use Firestore DB, then change the import and flamelink initialisation lines in [`plugins/flamelink.js`](https://github.com/flamelink/examples/blob/master/examples/nuxt-basic/plugins/flamelink.js) file to the following:
+
+``` javascript
+import 'flamelink/cf/content'
+import 'flamelink/cf/storage'
+```
+
+```javascript
+app.flamelink = flamelink({ firebaseApp, dbType: 'cf' })
+```
+
 ## Usage
 
 ``` bash
