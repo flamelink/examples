@@ -28,7 +28,7 @@
     "core-js": "^2.5.4",
     "firebase": "^6.4.0",
     "flamelink": "^1.0.0-alpha.26",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "rxjs": "^6.5.2",
     "zone.js": "^0.10.2"
   },
